@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/demo.css" />
   <link rel="stylesheet" href="css/templatemo-style.css">  
-  <script type="text/javascript" src="js/modernizr.custom.86080.js"></script>
+  <script type="text/javascript" src="js/modernizr.custom.86080.js"></script>	
 </head>
 <body>
 
@@ -30,35 +30,20 @@
 					<div class= "tm-content col-xl-6 col-sm-8 col-xs-8 ml-auto section">
 					<header class="mb-5"><h1>义工旅行</h1></header>
 					<P class="mb-5">深入了解当地的文化，结交志同道合的朋友。</P>
-                    <form action="/register" method="post" class="subscribe-form" id="form">
+                     <form action="/register" method="post" class="subscribe-form" id="form">
                     	{{ csrf_field() }}
-						@if (count($errors) > 0)
-						    <div class="amws-form-message error">
-						        <ul>
-						            @foreach ($errors->all() as $error)
-						                <li>{{ $error }}</li>
-						            @endforeach
-						        </ul>
-						    </div>
-						@endif	
                	    	<div class="row form-section">
 							<div class="form-group col-md-7 col-sm-7 col-xs-7"">
-						    <input type="text" class="form-control" name="uname" placeholder="请输入注册账号" value="{{ old('uname') }}"><span></span>
+						    <input type="text" class="form-control" name="uname" placeholder="请输入登录账号"><span></span>
 						</div>
 						<div class="form-group col-md-7 col-sm-7 col-xs-7"">
-						    <input type="password" class="form-control" name="upwd" placeholder="请输入密码" ><span></span>
+						    <input type="password" class="form-control" name="upwd" placeholder="请输入密码"><span></span>
 						</div>
 						<div class="form-group col-md-7 col-sm-7 col-xs-7"">
-						    <input type="password" class="form-control" name="reupwd" placeholder="确认密码"><span></span>
-						</div>
-						<div class="form-group col-md-7 col-sm-7 col-xs-7"">
-						    <input type="email" class="form-control" name="email" placeholder="请输入邮箱" value="{{ old('email') }}" ><span></span>
-						</div>
-						<div class="form-group col-md-7 col-sm-7 col-xs-7"">
-						    <input type="text" class="form-control" name="phone" placeholder="请输入手机号" value="{{ old('phone') }}" ><span></span>
+						    <input type="email" class="form-control" name="email" placeholder="请输入验证码"><span><img src="1" alt=""></span>
 						</div>
 							<div class="col-md-5 col-sm-5">
-								<button type="submit" class="tm-btn-subscribe">注册</button>
+								<button type="submit" class="tm-btn-subscribe">登录</button>
 							</div>
 						</div>
                     </form>
@@ -68,7 +53,7 @@
 	                    <a href="#" class="tm-social-link"><i class="fa fa-google-plus"></i></a>
 	                    <a href="#" class="tm-social-link"><i class="fa fa-twitter"></i></a>
 	                    <a href="#" class="tm-social-link"><i class="fa fa-linkedin"></i></a>
-						<a href="/login"  class="tm-btn-subscribe" >登录</a>
+	                    <a href="/register"  class="tm-btn-subscribe" >注册</a>
 	                </div>
 					</div>
 				</div>	

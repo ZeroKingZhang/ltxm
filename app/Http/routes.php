@@ -18,3 +18,5 @@ Route::get('/', function () {
 //前台注册
 Route::resource('/register','Home\RegisterController');
 Route::resource('/admin','Admin\UserController');
+//前台登录
+Route::resource('/login','Home\LoginController');
