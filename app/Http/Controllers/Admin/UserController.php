@@ -10,6 +10,7 @@ use App\User;
 use Hash;
 use DB;
 use App\Http\Requests\UserStoreRequest;
+use App\Http\Requests\UserEditRequest;
 class UserController extends Controller
 {
     /**
@@ -57,7 +58,6 @@ class UserController extends Controller
         $user -> admin_user_email = $request -> input('admin_user_email');
         $user -> admin_user_phone = $request -> input('admin_user_phone');
         $user -> admin_user_status = $request -> input('admin_user_status');
-        // $user -> admin_user_created_at = date("'Y-m-d H:s:i',time()");
         $res = $user -> save();
         //返回结果
         if ( $res ){
@@ -89,7 +89,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        //获取数据
+        $user = User::find($id);
+        //添加模板
+        return view('admin.user.edit', ['user' => $user]);
     }
 
     /**
@@ -99,9 +102,20 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserEditRequest $request, $id)
     {
-        //
+        // dd($id);
+        $user = User::find($id);
+        $user -> admin_user_password = $request -> input('admin_user_password');
+        $user -> admin_user_email = $request -> input('admin_user_email');
+        $user -> admin_user_phone = $request -> input('admin_user_phone');
+        $user -> admin_user_status = $request -> input('admin_user_status');
+        $res = $user -> save();
+        if($res){
+            return redirect('/user')->with('success','修改成功');
+        }else{
+            return back()->with('error','修改失败');
+        }
     }
 
     /**
