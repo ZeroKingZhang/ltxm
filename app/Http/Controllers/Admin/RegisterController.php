@@ -1,15 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Home;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\User;
-use DB;
 
-class LoginController extends Controller
+class RegisterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +16,7 @@ class LoginController extends Controller
      */
     public function index()
     {
-        return view('home.login');
+        //
     }
 
     /**
@@ -39,19 +37,7 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        $uname = $request->input('uname');
-        $upwd = md5($request -> input('upwd'));
-       $res=DB::table('home_users')->where('uname','=',$uname)->where('upwd','=',$upwd)->first();
-       // dd($res);
-        if($res){
-            session('homeFlag',true); //登录成功标志
-            session('homeUserInfo',$uname);//保存登录成功的用户信息
-            $uri=empty(session('back')) ? '/' :session('back');
-            session('back',null);
-            return redirect('/')->with('success','登录成功');
-        }else{
-            return redirect('/register')->with('error','登录失败');
-        }
+        //
     }
 
     /**

@@ -27,7 +27,7 @@
 		<!-- NAVBAR -->
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="brand">
-				<a href=""><img src="/assets/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
+				<a href="/admin"><img src="/assets/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
 			</div>
 			<div class="container-fluid">
 				<div class="navbar-btn">
@@ -75,14 +75,15 @@
 				<nav>
 					<ul class="nav">
 						<li>
-							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>用户管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-user"></i> <span>用户管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages" class="collapse ">
 								<ul class="nav">
-									<li><a href="page-profile.html" class="">用户添加</a></li>
-									<li><a href="page-login.html" class="">用户修改</a></li>
-									<li><a href="page-lockscreen.html" class="">用户显示</a></li>
+									<li><a href="/user/create" class="">用户添加</a></li>
+									<li><a href="/user" class="">用户列表</a></li>
+									<li><a href="/admin/user/show" class="">回收站</a></li>								
 								</ul>
 							</div>
+							<a href="/adminuser" class="active"><i class="lnr lnr-code"></i> <span>前台用户</span></a>
 						</li>
 					</ul>
 				</nav>

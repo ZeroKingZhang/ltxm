@@ -21,6 +21,7 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var string
      */
+
     protected $table = 'home_users';
 
     /**
@@ -36,4 +37,10 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    //配置一对一 关联用户详情
+    public function home_user_detail()
+    {
+        return $this->hasOne('App\Models\Home_User_detail','uid');
+    }
 }

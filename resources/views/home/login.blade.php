@@ -30,30 +30,30 @@
 					<div class= "tm-content col-xl-6 col-sm-8 col-xs-8 ml-auto section">
 					<header class="mb-5"><h1>义工旅行</h1></header>
 					<P class="mb-5">深入了解当地的文化，结交志同道合的朋友。</P>
-                     <form action="/register" method="post" class="subscribe-form" id="form">
+                     <form action="/login" method="post" class="subscribe-form" id="form">
                     	{{ csrf_field() }}
                	    	<div class="row form-section">
-							<div class="form-group col-md-7 col-sm-7 col-xs-7"">
+							<div class="form-group col-md-7 col-sm-7 col-xs-7">
 						    <input type="text" class="form-control" name="uname" placeholder="请输入登录账号"><span></span>
 						</div>
-						<div class="form-group col-md-7 col-sm-7 col-xs-7"">
+						<div class="form-group col-md-7 col-sm-7 col-xs-7">
 						    <input type="password" class="form-control" name="upwd" placeholder="请输入密码"><span></span>
 						</div>
-						<div class="form-group col-md-7 col-sm-7 col-xs-7"">
-						    <input type="email" class="form-control" name="email" placeholder="请输入验证码"><span><img src="1" alt=""></span>
+						<div class="form-group col-md-7 col-sm-7 col-xs-7">
+						    <input type="text" class="form-control" name="email" placeholder="请输入验证码"><span><img src="" alt=""></span>
 						</div>
-							<div class="col-md-5 col-sm-5">
+							<div class="form-group col-md-7 col-sm-7 col-xs-7">
 								<button type="submit" class="tm-btn-subscribe">登录</button>
+								<button class="tm-btn-subscribe"><a href="/register">注册</a></button>
 							</div>
 						</div>
                     </form>
-                   
 					<div class="tm-social-icons-container text-xs-center">
 	                    <a href="#" class="tm-social-link"><i class="fa fa-facebook"></i></a>
 	                    <a href="#" class="tm-social-link"><i class="fa fa-google-plus"></i></a>
 	                    <a href="#" class="tm-social-link"><i class="fa fa-twitter"></i></a>
 	                    <a href="#" class="tm-social-link"><i class="fa fa-linkedin"></i></a>
-	                    <a href="/register"  class="tm-btn-subscribe" >注册</a>
+	                    
 	                </div>
 					</div>
 				</div>	

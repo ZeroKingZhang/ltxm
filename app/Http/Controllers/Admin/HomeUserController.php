@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\AdminUser;
-use Hash;
+use App\User;
+use App\Models\Home_User_detail;
 use DB;
-use App\Http\Requests\UserStoreRequest;
-class UserController extends Controller
+
+class HomeUserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,9 +24,9 @@ class UserController extends Controller
         $count = $request -> input('count',3); //搜索条数
         // dump($search);
         //获取数据
-        $data = AdminUser::where('admin_user_name','like','%'.$search.'%') ->orderBy('admin_user_id') -> paginate($count);
+        $data = User::where('uname','like','%'.$search.'%') ->orderBy('id') -> paginate($count);
         //加载模板
-         return view('admin.user.index',['data'=>$data,'request'=>$request->all()]);
+         return view('admin.home.index',['data'=>$data,'request'=>$request->all()]);
     }
 
     /**
@@ -36,8 +36,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //加载模板
-        return view('admin.user.create');
+        //
     }
 
     /**
@@ -46,28 +45,9 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(UserStoreRequest $request)
-    {     
-        //开启事务
-        DB::beginTransaction();
-        //插入到数据库
-        $user = new AdminUser;
-        $user -> admin_user_name = $request -> input('admin_user_name');
-        $user -> admin_user_password = Hash::make($request -> input('admin_user_password'));
-        $user -> admin_user_email = $request -> input('admin_user_email');
-        $user -> admin_user_phone = $request -> input('admin_user_phone');
-        $user -> admin_user_status = $request -> input('admin_user_status');
-        // $user -> admin_user_created_at = date("'Y-m-d H:s:i',time()");
-        $res = $user -> save();
-        //返回结果
-        if ( $res ){
-            DB::commit();//提交事务
-            return redirect('/user') -> with('success','添加成功');
-        }else{
-            DB::rollBack();
-            return back() -> with('error','添加失败');
-        }
-        // dump( $request -> all() );
+    public function store(Request $request)
+    {
+        //
     }
 
     /**
@@ -112,12 +92,14 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //开启事务
+         //开启事务
         DB::beginTransaction();
         //删除用户
-        $res = AdminUser::destroy($id);
+        $res1 = User::destroy($id);
+        //删除详情
+        $res2 = Home_User_detail::where('uid',$id)->delete();
         //返回结果
-        if ( $res ){
+        if ( $res1 && $res2 ){
             DB::commit();//提交事务
             return back() -> with('success','删除成功');
         }else{
