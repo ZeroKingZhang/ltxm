@@ -7,18 +7,18 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<!-- VENDOR CSS -->
-	<link rel="stylesheet" href="./assets/vendor/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="./assets/vendor/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="./assets/vendor/linearicons/style.css">
+	<link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/assets/vendor/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/assets/vendor/linearicons/style.css">
 	<!-- MAIN CSS -->
-	<link rel="stylesheet" href="./assets/css/main.css">
+	<link rel="stylesheet" href="/assets/css/main.css">
 	<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
-	<link rel="stylesheet" href="./assets/css/demo.css">
+	<link rel="stylesheet" href="/assets/css/demo.css">
 	<!-- GOOGLE FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 	<!-- ICONS -->
-	<link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="./assets/img/favicon.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/assets/img/apple-icon.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon.png">
 </head>
 
 <body>
@@ -27,7 +27,7 @@
 		<!-- NAVBAR -->
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="brand">
-				<a href=""><img src="./assets/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
+				<a href=""><img src="/assets/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
 			</div>
 			<div class="container-fluid">
 				<div class="navbar-btn">
@@ -56,7 +56,7 @@
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="assets/img/user.png" class="img-circle" alt="Avatar"> <span>Samuel</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="/assets/img/user.png" class="img-circle" alt="Avatar"> <span>Samuel</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
 								<li><a href="#"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
 								<li><a href="#"><i class="lnr lnr-envelope"></i> <span>Message</span></a></li>
@@ -83,11 +83,41 @@
 									<li><a href="page-lockscreen.html" class="">用户显示</a></li>
 								</ul>
 							</div>
+
+						</li>
+						<li>
+							<a href="#subPages1" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>帖子管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="subPages1" class="collapse ">
+								<ul class="nav">
+									
+									<li><a href="/adminInvitation" class="">帖子显示</a></li>
+									<li><a href="page-lockscreen.html" class="">回收站</a></li>
+								</ul>
+							</div>
+							
+						</li>
+						<li>
+							<a href="#subPages2" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>版块管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="subPages2" class="collapse ">
+								<ul class="nav">
+									<li><a href="/forum/create" class="">版块添加</a></li>
+									<li><a href="/forum" class="">版块显示</a></li>
+									<li><a href="/forum" class="">回收站</a></li>
+								</ul>
+							</div>
+
 						</li>
 					</ul>
+					
+
 				</nav>
 			</div>
+			
 		</div>
+
+
+
+
 		<!-- END LEFT SIDEBAR -->
 		<!-- MAIN -->
 		<div class="main">
@@ -108,10 +138,10 @@
 	</div>
 	<!-- END WRAPPER -->
 	<!-- Javascript -->
-	<script src="./assets/vendor/jquery/jquery.min.js"></script>
-	<script src="./assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="./assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="./assets/scripts/klorofil-common.js"></script>
+	<script src="/assets/vendor/jquery/jquery.min.js"></script>
+	<script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="/assets/scripts/klorofil-common.js"></script>
 </body>
 
 </html>

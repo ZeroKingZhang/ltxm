@@ -18,3 +18,10 @@ Route::get('/', function () {
 //前台注册
 Route::resource('/register','Home\RegisterController');
 Route::resource('/admin','Admin\UserController');
+
+
+//帖子管理
+Route::resource('/adminInvitation','Admin\InvitationController');
+Route::resource('/forum','Admin\ForumController');
+Route::resource('/forum/show1','Admin\ForumController@show1');
+
