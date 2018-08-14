@@ -1,0 +1,7 @@
+/*css quotes style pagination*/
+div.quotes{padding:3px;margin:3px;text-align:right;}
+div.quotes a{border:#ddd 1px solid;padding:2px 5px;color:#aaa;margin:0 2px 0 0;}                                                                     
+div.quotes a:hover{border:#a0a0a0 1px solid;padding:2px 5px;margin:0 2px 0 0;}
+div.quotes a:active{border:#a0a0a0 1px solid;padding:2px 5px;margin:0 2px 0 0;}
+div.quotes span.current{border:#e0e0e0 1px solid;padding:2px 5px;font-weight:bold;color:#aaa;margin:0 2px 0 0;background-color:#f0f0f0;}
+div.quotes span.disabled{border:#f3f3f3 1px solid;padding:2px 5px;color:#ccc;margin:0 2px 0 0;}

@@ -6,12 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Home\UserStoreRequest;
 use App\User;
-use App\Models\Home_User_detail;
 use DB;
 
-class RegisterController extends Controller
+class LoginController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,7 +18,7 @@ class RegisterController extends Controller
      */
     public function index()
     {
-        return view('home.register');
+        return view('home.login');
     }
 
     /**
@@ -30,7 +28,7 @@ class RegisterController extends Controller
      */
     public function create()
     {
-       //
+        //
     }
 
     /**
@@ -39,25 +37,20 @@ class RegisterController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(UserStoreRequest $request)
+    public function store(Request $request)
     {
-        DB::beginTransaction(); //事务开启
-        $user = new User;
-        $user -> uname = $request -> input('uname');
-        $user -> upwd = md5($request -> input('upwd'));
-        $user -> email = $request -> input('email');
-        $res1 =  $user -> save();
-        $id = $user -> id;
-        $userdetail = new Home_User_detail;
-        $userdetail ->uid = $id;
-        $userdetail -> phone =  $request -> input('phone');
-        $res2 = $userdetail -> save();
-        if($res1 && $res2){
-            DB::commit(); //提交事务
-            return redirect('/login')->with('success','注册成功');
+        $uname = $request->input('uname');
+        $upwd = md5($request -> input('upwd'));
+       $res=DB::table('home_users')->where('uname','=',$uname)->where('upwd','=',$upwd)->first();
+       // dd($res);
+        if($res){
+            session('homeFlag',true); //登录成功标志
+            session('homeUserInfo',$uname);//保存登录成功的用户信息
+            $uri=empty(session('back')) ? '/' :session('back');
+            session('back',null);
+            return redirect('/')->with('success','登录成功');
         }else{
-            DB::rollBcak(); //回滚事务
-            return redirect('/register')->with('error','注册失败');
+            return redirect('/register')->with('error','登录失败');
         }
     }
 

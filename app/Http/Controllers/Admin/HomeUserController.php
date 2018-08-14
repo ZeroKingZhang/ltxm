@@ -1,26 +1,32 @@
 <?php
 
-namespace App\Http\Controllers\Home;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Home\UserStoreRequest;
 use App\User;
 use App\Models\Home_User_detail;
 use DB;
 
-class RegisterController extends Controller
+class HomeUserController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('home.register');
+        //接收数据
+        $search = $request -> input('search',''); //搜索条件
+        $count = $request -> input('count',3); //搜索条数
+        // dump($search);
+        //获取数据
+        $data = User::where('uname','like','%'.$search.'%') ->orderBy('id') -> paginate($count);
+        //加载模板
+         return view('admin.home.index',['data'=>$data,'request'=>$request->all()]);
     }
 
     /**
@@ -30,7 +36,7 @@ class RegisterController extends Controller
      */
     public function create()
     {
-       //
+        //
     }
 
     /**
@@ -39,26 +45,9 @@ class RegisterController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(UserStoreRequest $request)
+    public function store(Request $request)
     {
-        DB::beginTransaction(); //事务开启
-        $user = new User;
-        $user -> uname = $request -> input('uname');
-        $user -> upwd = md5($request -> input('upwd'));
-        $user -> email = $request -> input('email');
-        $res1 =  $user -> save();
-        $id = $user -> id;
-        $userdetail = new Home_User_detail;
-        $userdetail ->uid = $id;
-        $userdetail -> phone =  $request -> input('phone');
-        $res2 = $userdetail -> save();
-        if($res1 && $res2){
-            DB::commit(); //提交事务
-            return redirect('/login')->with('success','注册成功');
-        }else{
-            DB::rollBcak(); //回滚事务
-            return redirect('/register')->with('error','注册失败');
-        }
+        //
     }
 
     /**
@@ -103,6 +92,19 @@ class RegisterController extends Controller
      */
     public function destroy($id)
     {
-        //
+         //开启事务
+        DB::beginTransaction();
+        //删除用户
+        $res1 = User::destroy($id);
+        //删除详情
+        $res2 = Home_User_detail::where('uid',$id)->delete();
+        //返回结果
+        if ( $res1 && $res2 ){
+            DB::commit();//提交事务
+            return back() -> with('success','删除成功');
+        }else{
+            DB::rollBack();
+            return back() -> with('error','删除失败');
+        }
     }
 }
