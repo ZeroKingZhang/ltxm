@@ -110,7 +110,7 @@ class ForumController extends Controller
             return redirect('/forum')->with('success','更新成功');
         }else{
              DB::rollBack();
-            return back()->with('error','添加失败');
+            return back()->with('error','更新失败');
         }
 
     }
