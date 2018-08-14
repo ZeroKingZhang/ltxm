@@ -13,6 +13,7 @@
 	<!-- MAIN CSS -->
 	<link rel="stylesheet" href="/assets/css/main.css">
 	<link rel="stylesheet" href="/assets/css/page.css">
+
 	<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
 	<link rel="stylesheet" href="/assets/css/demo.css">
 	<!-- GOOGLE FONTS -->
@@ -28,7 +29,7 @@
 		<!-- NAVBAR -->
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="brand">
-				<a href="/admin"><img src="/assets/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
+				<a href=""><img src="/assets/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
 			</div>
 			<div class="container-fluid">
 				<div class="navbar-btn">
@@ -57,7 +58,7 @@
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="assets/img/user.png" class="img-circle" alt="Avatar"> <span>Samuel</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="/assets/img/user.png" class="img-circle" alt="Avatar"> <span>Samuel</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
 								<li><a href="#"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
 								<li><a href="#"><i class="lnr lnr-envelope"></i> <span>Message</span></a></li>
@@ -85,11 +86,41 @@
 								</ul>
 							</div>
 							<a href="/adminuser" class="active"><i class="lnr lnr-code"></i> <span>前台用户</span></a>
+
+						</li>
+						<li>
+							<a href="#subPages1" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>帖子管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="subPages1" class="collapse ">
+								<ul class="nav">
+									
+									<li><a href="/adminInvitation" class="">帖子显示</a></li>
+									<li><a href="page-lockscreen.html" class="">回收站</a></li>
+								</ul>
+							</div>
+							
+						</li>
+						<li>
+							<a href="#subPages2" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>版块管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="subPages2" class="collapse ">
+								<ul class="nav">
+									<li><a href="/forum/create" class="">版块添加</a></li>
+									<li><a href="/forum" class="">版块显示</a></li>
+									<li><a href="/forum" class="">回收站</a></li>
+								</ul>
+							</div>
+
 						</li>
 					</ul>
+					
+
 				</nav>
 			</div>
+			
 		</div>
+
+
+
+
 		<!-- END LEFT SIDEBAR -->
 		<!-- MAIN -->
 		<div class="main">

@@ -64,7 +64,7 @@ $(document).ready(function() {
 			wheelStep: 2,
 		});
 	}
-
+	
 
 	/*-----------------------------------/
 	/*	PANEL FUNCTIONS
