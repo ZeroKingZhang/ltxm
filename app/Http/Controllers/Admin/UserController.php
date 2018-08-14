@@ -9,8 +9,8 @@ use App\Http\Controllers\Controller;
 use App\Models\AdminUser;
 use Hash;
 use DB;
-use App\Http\Requests\UserStoreRequest;
-use App\Http\Requests\UserEditRequest;
+use App\Http\Requests\Admin\UserStoreRequest;
+use App\Http\Requests\Admin\UserEditRequest;
 class UserController extends Controller
 {
     /**
