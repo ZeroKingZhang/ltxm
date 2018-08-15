@@ -37,10 +37,10 @@
 												<td>{{$v->created_at}}</td>		
 												<td>{{$v->updated_at}}</td>		
 												<td>
-													<a href="/forum/{{$v->forum_id}}" class="btn btn-danger">禁用</a>
-													<a href="/forum/show1/{{$v->forum_id}}" class="btn btn-success">启用</a>
-													<a href="/forum/{{$v->forum_id}}/edit" class="btn btn-warning">修改</a>
-													<form action="/forum/{{$v->forum_id}}" method="POST" style=" display:inline;">
+													<a href="/admin/forum/{{$v->forum_id}}" class="btn btn-danger">禁用</a>
+													<a href="/admin/forum/show1/{{$v->forum_id}}" class="btn btn-success">启用</a>
+													<a href="/admin/forum/{{$v->forum_id}}/edit" class="btn btn-warning">修改</a>
+													<form action="/admin/forum/{{$v->forum_id}}" method="POST" style=" display:inline;">
 													{{ csrf_field() }}
 													{{ method_field('DELETE') }}
 													<input type="submit" value="删除" class="btn btn-info" >

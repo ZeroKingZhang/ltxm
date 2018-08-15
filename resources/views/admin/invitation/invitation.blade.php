@@ -51,7 +51,7 @@
 							<script type="text/javascript">
 			function del(obj,id){
 				// 获取删除的id
-				$.get('/forum'+id,function(msg){
+				$.get('/admin/forum'+id,function(msg){
 					if(msg == 'success'){
 						// 显示错误信息
 						

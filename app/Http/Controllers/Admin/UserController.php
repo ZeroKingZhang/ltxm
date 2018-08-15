@@ -62,7 +62,7 @@ class UserController extends Controller
         //返回结果
         if ( $res ){
             DB::commit();//提交事务
-            return redirect('/user') -> with('success','添加成功');
+            return redirect('/admin/user') -> with('success','添加成功');
         }else{
             DB::rollBack();
             return back() -> with('error','添加失败');
@@ -112,7 +112,7 @@ class UserController extends Controller
         $user -> admin_user_status = $request -> input('admin_user_status');
         $res = $user -> save();
         if($res){
-            return redirect('/user')->with('success','修改成功');
+            return redirect('/admin/user')->with('success','修改成功');
         }else{
             return back()->with('error','修改失败');
         }

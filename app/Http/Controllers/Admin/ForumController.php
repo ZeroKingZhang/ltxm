@@ -69,7 +69,7 @@ class ForumController extends Controller
          $res = $forum -> save();
          if($res){
             DB::commit(); //提交事务
-           return redirect('/forum')->with('success','添加成功');
+           return redirect('/admin/forum')->with('success','添加成功');
          }else{
             DB::rollBack();
             return back()->with('error','添加失败');
@@ -92,7 +92,7 @@ class ForumController extends Controller
         $res = $forum -> save();
         if($res){
              DB::commit(); //提交事务
-            return redirect('/forum')->with('success','更新成功');
+            return redirect('/admin/forum')->with('success','更新成功');
         }else{
              DB::rollBack();
             return back()->with('error','更新失败');
@@ -107,7 +107,7 @@ class ForumController extends Controller
         $res = $forum -> save();
         if($res){
              DB::commit(); //提交事务
-            return redirect('/forum')->with('success','更新成功');
+            return redirect('/admin/forum')->with('success','更新成功');
         }else{
              DB::rollBack();
             return back()->with('error','添加失败');
@@ -161,7 +161,7 @@ class ForumController extends Controller
          $res = $forum -> save();
           if($res){
             DB::commit(); //提交事务
-           return redirect('/forum')->with('success','修改成功');
+           return redirect('/admin/forum')->with('success','修改成功');
          }else{
             DB::rollBack();
             return back()->with('error','修改失败');
@@ -182,7 +182,7 @@ class ForumController extends Controller
         if($res){
 
             DB::commit(); //提交事务
-             return redirect('/forum')->with('success','删除成功');
+             return redirect('/admin/forum')->with('success','删除成功');
         }else{
             DB::rollBack();
              return back()->with('error','删除失败');

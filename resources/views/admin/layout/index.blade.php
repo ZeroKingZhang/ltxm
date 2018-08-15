@@ -80,35 +80,42 @@
 							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-user"></i> <span>用户管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages" class="collapse ">
 								<ul class="nav">
-									<li><a href="/user/create" class="">用户添加</a></li>
-									<li><a href="/user" class="">用户列表</a></li>
+									<li><a href="/admin/user/create" class="">用户添加</a></li>
+									<li><a href="/adin/user" class="">用户列表</a></li>
 									<li><a href="/admin/user/show" class="">回收站</a></li>								
 								</ul>
 							</div>
-							<a href="/adminuser" class="active"><i class="lnr lnr-code"></i> <span>前台用户</span></a>
-
+							<a href="/admin/home/user" class="active"><i class="lnr lnr-code"></i> <span>前台用户</span></a>
 						</li>
 						<li>
 							<a href="#subPages1" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>帖子管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages1" class="collapse ">
 								<ul class="nav">
 									
-									<li><a href="/adminInvitation" class="">帖子显示</a></li>
+									<li><a href="/admin/invitation" class="">帖子显示</a></li>
 									<li><a href="page-lockscreen.html" class="">回收站</a></li>
 								</ul>
 							</div>
-							
 						</li>
 						<li>
 							<a href="#subPages2" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>版块管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages2" class="collapse ">
 								<ul class="nav">
-									<li><a href="/forum/create" class="">版块添加</a></li>
-									<li><a href="/forum" class="">版块显示</a></li>
-									<li><a href="/forum" class="">回收站</a></li>
+									<li><a href="/admin/forum/create" class="">版块添加</a></li>
+									<li><a href="/admin/forum" class="">版块显示</a></li>
+									<li><a href="/admin/forum" class="">回收站</a></li>
 								</ul>
 							</div>
-
+						</li>
+						<li>
+							<a href="#subPages3" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>轮播图管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="subPages3" class="collapse ">
+								<ul class="nav">
+									
+									<li><a href="/admin/carousel" class="">轮播图显示</a></li>
+									<li><a href="/admin/carousel/create" class="">轮播图上传</a></li>
+								</ul>
+							</div>
 						</li>
 					</ul>
 					
@@ -124,6 +131,18 @@
 		<!-- END LEFT SIDEBAR -->
 		<!-- MAIN -->
 		<div class="main">
+@if( session('success') )
+<div class="alert alert-success alert-dismissible" role="alert">
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+	<i class="fa fa-check-circle"></i> {{ session('success') }}
+</div>
+@endif
+@if( session('error') )
+<div class="alert alert-danger alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+    <i class="fa fa-times-circle"></i> {{ session('error') }}
+</div>
+@endif
 			<!-- 内容开始 -->
 			@section('content')
 

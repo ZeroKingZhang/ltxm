@@ -4,22 +4,13 @@
 @section('content')
 <!-- 内容开始 -->
 <!-- 读取跳转信息 -->
-@if( session('success') )
-<div class="alert alert-success alert-dismissible" role="alert">
-	{{ session('success') }}	
-</div>
-@endif
 
-@if( session('error') )
-<div class="alert alert-success alert-dismissible" role="alert">
-	{{ session('error') }}	
-</div>
-@endif
+
 <div class="panel">
 	<div class="panel-heading">
 		<h3 class="panel-title">前台用户列表</h3>
 	</div>
-	<form action="/adminuser">
+	<form action="/admin/home/user">
 	<div class="input-group" style="width:250px;float:left">
 		<span class="input-group-addon">显示</span>
 		<select class="form-control" name="count">
@@ -58,7 +49,7 @@
 				<td>{{ $v-> updated_at }}</td>
 				<td>
 					<a href="" class="btn btn-info">修改</a>
-					<form action="/adminuser/{{ $v->id }}" method="post" style="display:inline">
+					<form action="/admin/home/user/{{ $v->id }}" method="post" style="display:inline">
 						{{ csrf_field() }}
 						{{ method_field('DELETE') }}
 						<input type="submit" value="删除" class="btn btn-danger">

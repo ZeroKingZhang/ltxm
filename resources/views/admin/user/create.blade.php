@@ -7,7 +7,7 @@
 	<div class="panel-heading">
 		<h3 class="panel-title">用户添加</h3>
 	</div>
-	<form action="/user" method="POST">
+	<form action="/admin/user" method="POST">
 		{{ csrf_field() }}
 		@if (count($errors) > 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       )
 	    <div class="alert alert-danger alert-dismissible">

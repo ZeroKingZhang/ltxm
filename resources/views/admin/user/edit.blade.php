@@ -7,7 +7,7 @@
 	<div class="panel-heading">
 		<h3 class="panel-title">用户修改</h3>
 	</div>
-	<form action="/user/{{ $user->admin_user_id }}" method="post">
+	<form action="/admin/user/{{ $user->admin_user_id }}" method="post">
 		{{ csrf_field() }}
 		{{ method_field('PUT') }}
 		@if (count($errors) > 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       )

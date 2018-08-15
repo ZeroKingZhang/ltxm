@@ -6,7 +6,7 @@
 	<div class="panel-heading">
 		<h3 class="panel-title">版块添加</h3>
 	</div>
-	<form action="/forum/{{$data->forum_id}}" method="POST" enctype="multipart/form-data">
+	<form action="/admin/forum/{{$data->forum_id}}" method="POST" enctype="multipart/form-data">
 		{{ csrf_field() }}
 		{{ method_field('PUT') }}
 		@if (count($errors) > 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       )
