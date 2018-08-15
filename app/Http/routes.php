@@ -21,7 +21,11 @@ Route::resource('/register','Home\RegisterController');
 //前台登录
 Route::resource('/login','Home\LoginController');
 //后台首页
+
 Route::get('/admin','Admin\AdminController@index');
+
+Route::get('/admin/login','Admin\AdminController@login');					
+Route::get('/admin/loginpost','Admin\AdminController@loginpost');					
 
 //后台用户管理
 Route::resource('/admin/user','Admin\UserController');

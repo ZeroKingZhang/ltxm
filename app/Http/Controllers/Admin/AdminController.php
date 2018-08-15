@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Models\AdminUser;
 
 class AdminController extends Controller
 {
@@ -83,5 +84,34 @@ class AdminController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function login()
+    {
+        // echo '1111';
+        return view('admin.index.login');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function loginpost(Request $request)
+    {
+        if (Auth::attempt(array('signin-name'=>Input::get('admin_user_name'), 'password'=>Input::get('password')))) {
+              return Redirect::to('user/dashboard')
+              ->with('message', '成功登录');
+          } else {
+              return Redirect::to('user/login')
+                    ->with('message', '用户名密码不正确')
+                    ->withInput();
+          }
     }
 }

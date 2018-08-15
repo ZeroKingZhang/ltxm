@@ -13,9 +13,9 @@
 	<div class="input-group" style="width:250px;float:left;margin-left: 25px;">
 		<span class="input-group-addon">显示</span>
 		<select class="form-control" name="count">
-			<option value="10" @if( !empty($request['count']) && isset($request['count']) &&  $request['count']==10 ) selected @endif>10</option>
+			<option value="3" @if( !empty($request['count']) && isset($request['count']) &&  $request['count']==3 ) selected @endif>10</option>
 			<option value="5" @if( !empty($request['count']) && isset($request['count']) &&  $request['count']==5 )selected @endif>5</option>
-			<option value="3" @if( !empty($request['count']) && isset($request['count']) &&  $request['count']==3 ) selected @endif>3</option>
+			<option value="10" @if( !empty($request['count']) && isset($request['count']) &&  $request['count']==10 ) selected @endif>3</option>
 		</select>
 		<span class="input-group-addon">条/页</span>
 	</div>
@@ -26,11 +26,11 @@
 	</form>
 	<div style="clear:both;"></div>
 	<div class="panel-body">
-		<table class="table table-bordered">
+		<table class="table table-bordered"  style="text-align:center;">
 		<thead>
 			<tr>
-				<th>ID</th>
-				<th>用户名</th>
+				<th style="text-align:center;">ID</th>
+				<th style="text-align:center;">用户名</th>
 				<th>权限</th>
 				<th>邮箱</th>
 				<th>手机号</th>
@@ -67,7 +67,7 @@
 					<form action="/admin/user/{{ $v->admin_user_id }}" method="post" style="display:inline">
 						{{ csrf_field() }}
 						{{ method_field('DELETE') }}
-						<input type="submit" value="删除" class="btn btn-danger">
+						<input type="submit" value="删除" class="btn btn-danger" style="display:inline">
 					</form>
 					
 				</td>
@@ -95,7 +95,9 @@
 	    		</li>
   			</ul>
 		</nav> -->
+		<span style="width:300px;display:block;margin:0 auto;">
 		{!! $data -> render() !!}
+		</span>
 	</div>
 <!-- 内容结束 -->
 @endsection
