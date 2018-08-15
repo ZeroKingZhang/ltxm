@@ -33,9 +33,15 @@ Route::resource('/admin/user','Admin\UserController');
 Route::resource('/admin/home/user','Admin\HomeUserController');
 
 //帖子管理
+
 Route::resource('/admin/invitation','Admin\InvitationController');
 Route::resource('/admin/forum','Admin\ForumController');
 Route::resource('/admin/forum/show1','Admin\ForumController@show1');
+
+//敏感词管理
+Route::resource('/sensitivity','Admin\SensitivityController');
+//友情链接管理
+Route::resource('/blogroll','Admin\BlogrollController');
 
 //轮播图设置
 Route::resource('/admin/carousel','Admin\CarouselController');

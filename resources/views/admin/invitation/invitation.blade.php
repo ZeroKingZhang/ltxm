@@ -48,6 +48,7 @@
 									</table>
 								</div>
 							</div>
+
 							<script type="text/javascript">
 			function del(obj,id){
 				// 获取删除的id

@@ -17,11 +17,14 @@ class ForumController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-         $data = Forum::all();
-         return view('admin.forum.index',['data'=>$data]);
+          //接收数据
+        $search = $request -> input('search',''); //搜索条件
+        $count = $request -> input('count',3); //搜索条数
+        $data = Forum::where('forum_name','like','%'.$search.'%') ->orderBy('forum_id') -> paginate($count);
+        return view('admin.forum.index',['data'=>$data,'request'=>$request->all()]);
     }
 
     /**
@@ -110,7 +113,7 @@ class ForumController extends Controller
             return redirect('/admin/forum')->with('success','更新成功');
         }else{
              DB::rollBack();
-            return back()->with('error','添加失败');
+            return back()->with('error','更新失败');
         }
 
     }
