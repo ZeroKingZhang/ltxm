@@ -20,7 +20,10 @@ Route::resource('/register','Home\RegisterController');
 //前台登录
 Route::resource('/login','Home\LoginController');
 //后台首页
+Route::get('/adminlogin','Admin\AdminController@login');					
+Route::get('/adminloginpost','Admin\AdminController@loginpost');					
 Route::resource('/admin','Admin\AdminController');
+
 
 //后台用户管理
 Route::resource('/user','Admin\UserController');
