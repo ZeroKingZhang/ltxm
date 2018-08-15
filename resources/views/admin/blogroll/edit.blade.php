@@ -8,7 +8,7 @@
 	</div>
 	<form action="/admin/blogroll" method="POST" enctype="multipart/form-data">
 		{{ csrf_field() }}
-		@if (count($errors) > 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       )
+		@if (count($errors) > 0)
 	    <div class="alert alert-danger alert-dismissible">
 	        <ul>
 	            @foreach ($errors->all() as $error)
