@@ -20,7 +20,7 @@
 								<div class="panel-heading">
 									<h3 class="panel-title">友情链接管理</h3>
 								</div>
-<form action="/bolgroll">
+<form action="/admin/bolgroll">
 	<div class="input-group" style="width:250px;float:left;margin-left: 25px;">
 		<span class="input-group-addon">显示</span>
 		<select class="form-control" name="count">
@@ -58,8 +58,8 @@
 												<td>{{$v->created_at}}</td>		
 												<td>{{$v->updated_at}}</td>		
 												<td>
-													<a href="/blogroll/{{$v->blogroll_id}}/edit" class="btn btn-warning">修改</a>
-													<form action="/blogroll/{{$v->blogroll_id}}" method="POST" style=" display:inline;">
+													<a href="/admin/blogroll/{{$v->blogroll_id}}/edit" class="btn btn-warning">修改</a>
+													<form action="/admin/blogroll/{{$v->blogroll_id}}" method="POST" style=" display:inline;">
 													{{ csrf_field() }}
 													{{ method_field('DELETE') }}
 													<input type="submit" value="删除" class="btn btn-info" >

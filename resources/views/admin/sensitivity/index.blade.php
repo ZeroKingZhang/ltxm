@@ -2,22 +2,11 @@
 
 
 @section('content')
-@if( session('success') )
-<div class="alert alert-success alert-dismissible" role="alert">
-	{{ session('success') }}	
-</div>
-@endif
-
-@if( session('error') )
-<div class="alert alert-success alert-dismissible" role="alert">
-	{{ session('error') }}	
-</div>
-@endif
 <div class="panel">
-								<div class="panel-heading">
-									<h3 class="panel-title">敏感词管理</h3>
-								</div>
-								<form action="/sensitivity">
+	<div class="panel-heading">
+		<h3 class="panel-title">敏感词管理</h3>
+	</div>
+	<form action="/admin/sensitivity">
 	<div class="input-group" style="width:250px;float:left;margin-left: 25px;">
 		<span class="input-group-addon">显示</span>
 		<select class="form-control" name="count">
@@ -51,8 +40,8 @@
 												<td>{{$v->badword}}</td>
 													
 												<td>
-													<a href="/sensitivity/{{$v->sensitivity_id}}" class="btn btn-danger">禁用</a>
-													<a href="/forum/show1/{{$v->sensitivity_id}}" class="btn btn-success">启用</a>
+													<a href="/admin/sensitivity/{{$v->sensitivity_id}}" class="btn btn-danger">禁用</a>
+													<a href="/admin/forum/show1/{{$v->sensitivity_id}}" class="btn btn-success">启用</a>
 													
 													<form action="/sensitivity/{{$v->sensitivity_id}}" method="POST" style=" display:inline;">
 													{{ csrf_field() }}

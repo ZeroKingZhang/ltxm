@@ -6,7 +6,7 @@
 	<div class="panel-heading">
 		<h3 class="panel-title">版块添加</h3>
 	</div>
-	<form action="/sensitivity" method="POST" enctype="multipart/form-data">
+	<form action="/admin/sensitivity" method="POST" enctype="multipart/form-data">
 		{{ csrf_field() }}
 		@if (count($errors) > 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       )
 	    <div class="alert alert-danger alert-dismissible">

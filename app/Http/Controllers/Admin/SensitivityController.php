@@ -52,7 +52,7 @@ class SensitivityController extends Controller
              DB::beginTransaction(); //开启事务
             if($res){
                  DB::commit(); //提交事务
-                 return redirect('/sensitivity')->with('success','添加成功');
+                 return redirect('/admin/sensitivity')->with('success','添加成功');
             }else{
                  DB::rollBack();
                  return back()->with('error','添加失败');
@@ -109,7 +109,7 @@ class SensitivityController extends Controller
         $res = Sensitivity::destroy($id);
         if($res){
             DB::commit(); //提交事务
-            return redirect('/sensitivity')->with('success','删除成功');
+            return redirect('/admin/sensitivity')->with('success','删除成功');
         }else{
             DB::rollBack();
             return back()->with('error','删除失败');

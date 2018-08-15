@@ -6,7 +6,7 @@
 	<div class="panel-heading">
 		<h3 class="panel-title">友情链接添加</h3>
 	</div>
-	<form action="/blogroll" method="POST" enctype="multipart/form-data">
+	<form action="/admin/blogroll" method="POST" enctype="multipart/form-data">
 		{{ csrf_field() }}
 		@if (count($errors) > 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       )
 	    <div class="alert alert-danger alert-dismissible">

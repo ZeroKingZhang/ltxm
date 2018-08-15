@@ -55,7 +55,7 @@ class BlogrollController extends Controller
          $res = $blogroll -> save();
          if($res){
             DB::commit(); //提交事务
-           return redirect('/blogroll')->with('success','添加成功');
+           return redirect('/admin/blogroll')->with('success','添加成功');
          }else{
             DB::rollBack();
             return back()->with('error','添加失败');
@@ -113,7 +113,7 @@ class BlogrollController extends Controller
         if($res){
 
             DB::commit(); //提交事务
-             return redirect('/blogroll')->with('success','删除成功');
+             return redirect('/admin/blogroll')->with('success','删除成功');
         }else{
             DB::rollBack();
              return back()->with('error','删除失败');
