@@ -32,5 +32,9 @@ Route::resource('/adminuser','Admin\HomeUserController');
 Route::resource('/adminInvitation','Admin\InvitationController');
 Route::resource('/forum','Admin\ForumController');
 Route::resource('/forum/show1','Admin\ForumController@show1');
+//敏感词管理
+Route::resource('/sensitivity','Admin\SensitivityController');
+//友情链接管理
+Route::resource('/blogroll','Admin\BlogrollController');
 
 

@@ -48,20 +48,4 @@
 									</table>
 								</div>
 							</div>
-							<script type="text/javascript">
-			function del(obj,id){
-				// 获取删除的id
-				$.get('/forum'+id,function(msg){
-					if(msg == 'success'){
-						// 显示错误信息
-						
-						// 删除节点
-						$(obj).parent().parent().remove();
-					}else{
-						alert('当前删除失败');
-					}
-				},'html');	
-			}
-
-		</script>
 @endsection

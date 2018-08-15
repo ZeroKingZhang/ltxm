@@ -118,7 +118,29 @@
 								<ul class="nav">
 									<li><a href="/forum/create" class="">版块添加</a></li>
 									<li><a href="/forum" class="">版块显示</a></li>
-									<li><a href="/forum" class="">回收站</a></li>
+									
+								</ul>
+							</div>
+
+						</li>
+						<li>
+							<a href="#subPages3" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>敏感词管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="subPages3" class="collapse ">
+								<ul class="nav">
+									<li><a href="/sensitivity/create" class="">敏感词添加</a></li>
+									<li><a href="/sensitivity" class="">敏感词浏览</a></li>
+									
+								</ul>
+							</div>
+
+						</li>
+						<li>
+							<a href="#subPages4" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>友情链接管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="subPages4" class="collapse ">
+								<ul class="nav">
+									<li><a href="/blogroll/create" class="">友情链接添加</a></li>
+									<li><a href="/blogroll" class="">友情链接浏览</a></li>
+									
 								</ul>
 							</div>
 

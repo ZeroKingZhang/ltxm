@@ -18,15 +18,15 @@
 
 <div class="panel">
 								<div class="panel-heading">
-									<h3 class="panel-title">版块管理</h3>
+									<h3 class="panel-title">友情链接管理</h3>
 								</div>
-	<form action="/sensitivity">
+<form action="/bolgroll">
 	<div class="input-group" style="width:250px;float:left;margin-left: 25px;">
 		<span class="input-group-addon">显示</span>
 		<select class="form-control" name="count">
-			<option value="10" @if( !empty($request['count']) && isset($request['count']) &&  $request['count']==10 ) selected @endif>10</option>
-			<option value="5" @if( !empty($request['count']) && isset($request['count']) &&  $request['count']==5 )selected @endif>5</option>
-			<option value="3" @if( !empty($request['count']) && isset($request['count']) &&  $request['count']==3 ) selected @endif>3</option>
+			<option value="10" @if( !empty($request['count']) && isset($request['count']) &&  $request['count']==10 ) selected @endif >10</option>
+			<option value="5" @if( !empty($request['count']) && isset($request['count']) &&  $request['count']==5 )selected @endif >5</option>
+			<option value="3" @if( !empty($request['count']) && isset($request['count']) &&  $request['count']==3 ) selected @endif >3</option>
 		</select>
 		<span class="input-group-addon">条/页</span>
 	</div>
@@ -40,10 +40,9 @@
 									<table class="table">
 										<thead>
 											<tr>
-												<th>版块ID</th>
-												<th>版块图片</th>
-												<th>版块名称</th>
-												<th>版块状态</th>
+												<th>友情链接ID</th>
+												<th>友情链接名称</th>
+												<th>友情链接域名</th>
 												<th>创建时间</th>
 												<th>最后修改时间</th>
 												<th>操作</th>
@@ -53,24 +52,14 @@
 										<tbody>
 											
 											<tr>
-												<td>{{$v->forum_id}}</td>		
-												<td>
-													<img src="{{$v->forum_pic}}" width="50">
-												</td>
-												<td>{{$v->forum_name}}</td>		
-												<td>@if ($v->forum_status == 0)
-														启用
-													@elseif ($v->forum_status == 1)
-														禁用
-													@endif
-												</td>				
+												<td>{{$v->blogroll_id}}</td>		
+												<td>{{$v->blogroll_name}}</td>			
+												<td>{{$v->blogroll_dns}}</td>			
 												<td>{{$v->created_at}}</td>		
 												<td>{{$v->updated_at}}</td>		
 												<td>
-													<a href="/forum/{{$v->forum_id}}" class="btn btn-danger">禁用</a>
-													<a href="/forum/show1/{{$v->forum_id}}" class="btn btn-success">启用</a>
-													<a href="/forum/{{$v->forum_id}}/edit" class="btn btn-warning">修改</a>
-													<form action="/forum/{{$v->forum_id}}" method="POST" style=" display:inline;">
+													<a href="/blogroll/{{$v->blogroll_id}}/edit" class="btn btn-warning">修改</a>
+													<form action="/blogroll/{{$v->blogroll_id}}" method="POST" style=" display:inline;">
 													{{ csrf_field() }}
 													{{ method_field('DELETE') }}
 													<input type="submit" value="删除" class="btn btn-info" >
@@ -80,7 +69,7 @@
 										</tbody>
 										@endforeach
 									</table>
-									{!! $data -> appends($request)->render() !!}
+									{!! $data ->appends($request)->render() !!}
 								</div>
 								
 							
