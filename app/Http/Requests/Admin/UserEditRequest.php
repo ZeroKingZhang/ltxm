@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin;
 
 use App\Http\Requests\Request;
 
@@ -33,7 +33,7 @@ class UserEditRequest extends Request
 
      public function messages()
     {
-        return[
+        return [
             'admin_user_password.required' => '密码是必填的',
             'admin_user_password.regex' => '密码格式不正确',
             'admin_user_email.required' => '邮箱是必填的',

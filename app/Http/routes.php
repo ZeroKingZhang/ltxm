@@ -38,3 +38,7 @@ Route::resource('/admin/sensitivity','Admin\SensitivityController');
 Route::resource('/admin/blogroll','Admin\BlogrollController');
 //轮播图设置
 Route::resource('/admin/carousel','Admin\CarouselController');
+//申明设置
+Route::get('/declaration','Admin\AdminController@declaration');
+Route::get('/clause','Admin\AdminController@clause');
+Route::get('/copyright','Admin\AdminController@copyright');
