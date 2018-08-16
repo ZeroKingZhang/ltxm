@@ -10,6 +10,7 @@ use App\Http\Requests\Home\UserStoreRequest;
 use App\User;
 use App\Models\Home_User_detail;
 use DB;
+use Germey\Geetest;
 
 class RegisterController extends Controller
 {

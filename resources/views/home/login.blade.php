@@ -40,7 +40,7 @@
 						    <input type="password" class="form-control" name="upwd" placeholder="请输入密码"><span></span>
 						</div>
 						<div class="form-group col-md-7 col-sm-7 col-xs-7">
-						    <input type="text" class="form-control" name="email" placeholder="请输入验证码"><span><img src="" alt=""></span>
+						   {!! Geetest::render() !!}
 						</div>
 							<div class="form-group col-md-7 col-sm-7 col-xs-7">
 								<button type="submit" class="tm-btn-subscribe">登录</button>
@@ -53,7 +53,6 @@
 	                    <a href="#" class="tm-social-link"><i class="fa fa-google-plus"></i></a>
 	                    <a href="#" class="tm-social-link"><i class="fa fa-twitter"></i></a>
 	                    <a href="#" class="tm-social-link"><i class="fa fa-linkedin"></i></a>
-	                    
 	                </div>
 					</div>
 				</div>	

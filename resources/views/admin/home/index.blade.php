@@ -48,7 +48,7 @@
 				<td>{{ $v-> created_at }}</td>
 				<td>{{ $v-> updated_at }}</td>
 				<td>
-					<a href="" class="btn btn-info">修改</a>
+					<a href="/admin/home/user/{{ $v->id }}/edit" class="btn btn-info">修改</a>
 					<form action="/admin/home/user/{{ $v->id }}" method="post" style="display:inline">
 						{{ csrf_field() }}
 						{{ method_field('DELETE') }}
@@ -57,10 +57,31 @@
 				</td>
 			</tr>
 		@endforeach
-		<!-- {!! $data -> render() !!} -->
+			<!-- {!! $data -> render() !!} -->
 			</tbody>
 		</table>
-	</div>
+		<!-- <nav aria-label="Page navigation" style="margin-right:5px;">
+  			<ul class="pagination">
+	    		<li>
+	      			<a href="#" aria-label="Previous">
+	        		<span aria-hidden="true">&laquo;</span>
+	      			</a>
+	   			 </li>
+	    		<li><a href="#">1</a></li>
+	    		<li><a href="#">2</a></li>
+	    		<li><a href="#">3</a></li>
+	    		<li><a href="#">4</a></li>
+	    		<li><a href="#">5</a></li>
+	    		<li>
+	      			<a href="#" aria-label="Next">
+	        		<span aria-hidden="true">&raquo;</span>
+	      			</a>
+	    		</li>
+  			</ul>
+		</nav> -->
+		<span style="width:300px;display:block;margin:0 auto;">
+		{!! $data -> render() !!}
+		</span>
 	</div>
 <!-- 内容结束 -->
 @endsection

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\AdminUser;
+use DB;
 
 class LoginController extends Controller
 {
@@ -38,14 +39,16 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        if (Auth::attempt(array('signin-name'=>Input::get('admin_user_name'), 'password'=>Input::get('password')))) {
-              return Redirect::to('/admin/user/dashboard')
-              ->with('message', '成功登录');
-          } else {
-              return Redirect::to('user/login')
-                    ->with('message', '用户名密码不正确')
-                    ->withInput();
-          }
+       $uname = $request->input('admin_name');
+       $upwd  = md5($request -> input('admin_password'));
+       $res=DB::table('admin_user')->where('admin_user_name','=',$uname)->where('admin_user_password','=',$upwd)->first();
+       // dd($res);
+       if($res){
+        $request->session()->put('adminFlag', true);
+        // dd(session());
+        return redirect('/admin')->with('message', '成功登录');
+       }
+       return back()->with('message', '用户名密码不正确')->withInput();
     }
 
     /**

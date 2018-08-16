@@ -44,13 +44,13 @@ class LoginController extends Controller
        $res=DB::table('home_users')->where('uname','=',$uname)->where('upwd','=',$upwd)->first();
        // dd($res);
         if($res){
-            session('homeFlag',true); //登录成功标志
-            session('homeUserInfo',$uname);//保存登录成功的用户信息
+           $request->session()->put('homeFlag', true); //登录成功标志
+           $request->session()->put('homeUserInfo',$uname);//保存登录成功的用户信息
             $uri=empty(session('back')) ? '/' :session('back');
             session('back',null);
             return redirect('/')->with('success','登录成功');
         }else{
-            return redirect('/register')->with('error','登录失败');
+            return back()->with('error','登录失败');
         }
     }
 
