@@ -23,7 +23,8 @@ Route::resource('/login','Home\LoginController');
 Route::resource('/admin/login','Admin\LoginController');					
 
 
-//后台路由组
+
+
 Route::group(['middleware'=>'adminlogin'],function(){
     //后台首页
     Route::get('/admin','Admin\AdminController@index');
@@ -41,4 +42,8 @@ Route::group(['middleware'=>'adminlogin'],function(){
 	Route::resource('/admin/blogroll','Admin\BlogrollController');
 	//轮播图设置
 	Route::resource('/admin/carousel','Admin\CarouselController');
+	//申明设置
+	Route::get('/declaration','Admin\AdminController@declaration');
+	Route::get('/clause','Admin\AdminController@clause');
+	Route::get('/copyright','Admin\AdminController@copyright');
 });

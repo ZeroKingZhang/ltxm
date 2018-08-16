@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin;
 
 use App\Http\Requests\Request;
 
@@ -34,7 +34,7 @@ class UserStoreRequest extends Request
 
     public function messages()
     {
-        return[
+        return [
             'admin_user_name.required' => '用户名是必填的',
             'admin_user_name.unique' => '用户名已存在',
             'admin_user_name.regex' => '用户名格式不正确',

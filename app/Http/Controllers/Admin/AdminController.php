@@ -20,4 +20,33 @@ class AdminController extends Controller
         return view('admin.index.index');
     }
    
+   /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function declaration()
+    {
+        return view('admin.declaration');
+    }
+
+     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function clause()
+    {
+        return view('admin.clause');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function copyright()
+    {
+        return view('admin.copyright');
+    }
 }

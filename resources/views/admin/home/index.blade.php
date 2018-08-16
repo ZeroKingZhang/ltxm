@@ -57,7 +57,7 @@
 				</td>
 			</tr>
 		@endforeach
-			<!-- {!! $data -> render() !!} -->
+		{!! $data ->appends($request) -> render() !!}
 			</tbody>
 		</table>
 		<!-- <nav aria-label="Page navigation" style="margin-right:5px;">
