@@ -10,6 +10,8 @@ use App\Http\Requests\Home\UserStoreRequest;
 use App\User;
 use App\Models\Home_User_detail;
 use DB;
+use Germey\Geetest;
+use Hash;
 
 class RegisterController extends Controller
 {
@@ -44,7 +46,7 @@ class RegisterController extends Controller
         DB::beginTransaction(); //事务开启
         $user = new User;
         $user -> uname = $request -> input('uname');
-        $user -> upwd = md5($request -> input('upwd'));
+        $user -> upwd = Hash::make($request -> input('upwd'));
         $user -> email = $request -> input('email');
         $res1 =  $user -> save();
         $id = $user -> id;

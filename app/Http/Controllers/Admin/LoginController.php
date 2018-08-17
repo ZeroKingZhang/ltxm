@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\AdminUser;
+use DB;
+use Hash;
 
 class LoginController extends Controller
 {
@@ -38,14 +40,15 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        if (Auth::attempt(array('signin-name'=>Input::get('admin_user_name'), 'password'=>Input::get('password')))) {
-              return Redirect::to('/admin/user/dashboard')
-              ->with('message', '成功登录');
-          } else {
-              return Redirect::to('user/login')
-                    ->with('message', '用户名密码不正确')
-                    ->withInput();
-          }
+       $uname = $request->input('admin_name');
+       $upwd  = $request -> input('admin_password');
+       $res=DB::table('admin_user')->where('admin_user_name','=',$uname)->select('admin_user_password')->first();
+       // dd($res);
+       if (Hash::check($upwd, $res->admin_user_password)) {
+        $request->session()->put('adminFlag', true);
+        return redirect('/admin')->with('message', '成功登录');
+        }
+       return back()->with('message', '用户名密码不正确')->withInput();
     }
 
     /**
@@ -91,5 +94,11 @@ class LoginController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function logout(Request $request)
+    {
+        //退出登录
+        $request->session()->put('adminFlag', null);
+        return redirect('/admin')->with('message', '成功退出');
     }
 }
