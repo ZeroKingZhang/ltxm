@@ -30,6 +30,7 @@ Route::resource('/admin/user','Admin\UserController');
 Route::resource('/admin/home/user','Admin\HomeUserController');
 //帖子管理
 Route::resource('/admin/invitation','Admin\InvitationController');
+Route::controller('/invitation/softdeletes','Admin\SoftdeletesController');
 Route::resource('/admin/forum','Admin\ForumController');
 Route::resource('/admin/forum/show1','Admin\ForumController@show1');
 //敏感词管理
@@ -38,3 +39,7 @@ Route::resource('/admin/sensitivity','Admin\SensitivityController');
 Route::resource('/admin/blogroll','Admin\BlogrollController');
 //轮播图设置
 Route::resource('/admin/carousel','Admin\CarouselController');
+//公告管理
+Route::resource('/admin/announcement','Admin\announcementController');
+Route::get('/admin/announcement/disabled/{id}','Admin\announcementController@disabled');
+Route::get('/admin/announcement/start/{id}','Admin\announcementController@start');

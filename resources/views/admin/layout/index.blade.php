@@ -106,7 +106,7 @@
 								<ul class="nav">
 									
 									<li><a href="/admin/invitation" class="">帖子显示</a></li>
-									<li><a href="page-lockscreen.html" class="">回收站</a></li>
+									<li><a href="/invitation/softdeletes" class="">回收站</a></li>
 								</ul>
 							</div>
 						</li>
@@ -135,8 +135,8 @@
 							<a href="#subPages4" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>敏感词管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages4" class="collapse ">
 								<ul class="nav">
-									<li><a href="/sensitivity/create" class="">敏感词添加</a></li>
-									<li><a href="/sensitivity" class="">敏感词浏览</a></li>
+									<li><a href="/admin/sensitivity/create" class="">敏感词添加</a></li>
+									<li><a href="/admin/sensitivity" class="">敏感词浏览</a></li>
 									
 								</ul>
 							</div>
@@ -146,8 +146,17 @@
 							<a href="#subPages5" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>友情链接管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages5" class="collapse ">
 								<ul class="nav">
-									<li><a href="/blogroll/create" class="">友情链接添加</a></li>
-									<li><a href="/blogroll" class="">友情链接浏览</a></li>	
+									<li><a href="/admin/blogroll/create" class="">友情链接添加</a></li>
+									<li><a href="/admin/blogroll" class="">友情链接浏览</a></li>	
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="#subPages6" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>公告管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="subPages6" class="collapse ">
+								<ul class="nav">
+									<li><a href="/admin/announcement/create" class="">公告添加</a></li>
+									<li><a href="/admin/announcement" class="">公告浏览</a></li>	
 								</ul>
 							</div>
 						</li>
