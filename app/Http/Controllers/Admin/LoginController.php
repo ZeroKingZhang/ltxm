@@ -40,7 +40,7 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-<<<<<<< HEAD
+
         if (Auth::attempt(array('signin-name'=>Input::get('admin_user_name'), 'password'=>Input::get('password')))) {
               return Redirect::to('/admin/user/dashboard')
               ->with('message', '成功登录');
@@ -50,7 +50,7 @@ class LoginController extends Controller
                     ->withInput();
           }
         
-=======
+
        $uname = $request->input('admin_name');
        $upwd  = $request -> input('admin_password');
        $res=DB::table('admin_user')->where('admin_user_name','=',$uname)->select('admin_user_password')->first();
@@ -60,7 +60,7 @@ class LoginController extends Controller
         return redirect('/admin')->with('message', '成功登录');
         }
        return back()->with('message', '用户名密码不正确')->withInput();
->>>>>>> 682e87657bf2a817549791f8c0eea27af5ccd6ef
+
     }
 
     /**
