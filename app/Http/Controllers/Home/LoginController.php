@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
 use DB;
+use Hash;
 
 class LoginController extends Controller
 {
@@ -40,14 +41,14 @@ class LoginController extends Controller
     public function store(Request $request)
     {
         $uname = $request->input('uname');
-        $upwd = md5($request -> input('upwd'));
-       $res=DB::table('home_users')->where('uname','=',$uname)->where('upwd','=',$upwd)->first();
-       // dd($res);
-        if($res){
+        $upwd = $request -> input('upwd');
+       $res=DB::table('home_users')->where('uname','=',$uname)->select('upwd')->first();
+       // dd(Hash::check($upwd, $res->upwd));
+        if(Hash::check($upwd, $res->upwd)){
            $request->session()->put('homeFlag', true); //登录成功标志
            $request->session()->put('homeUserInfo',$uname);//保存登录成功的用户信息
-            $uri=empty(session('back')) ? '/' :session('back');
-            session('back',null);
+            // $uri=empty(session('back')) ? '/' :session('back');
+            // session('back',null);
             return redirect('/')->with('success','登录成功');
         }else{
             return back()->with('error','登录失败');

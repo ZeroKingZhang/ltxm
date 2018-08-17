@@ -20,6 +20,7 @@ Route::resource('/register','Home\RegisterController');
 //前台登录
 Route::resource('/login','Home\LoginController');
 //后台登录
+Route::get('/admin/login/logout','Admin\LoginController@logout');
 Route::resource('/admin/login','Admin\LoginController');					
 
 

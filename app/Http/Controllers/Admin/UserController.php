@@ -54,7 +54,7 @@ class UserController extends Controller
         //插入到数据库
         $user = new AdminUser;
         $user -> admin_user_name = $request -> input('admin_user_name');
-        $user -> admin_user_password = md5($request -> input('admin_user_password'));
+        $user -> admin_user_password = Hash::make($request -> input('admin_user_password'));
         $user -> admin_user_email = $request -> input('admin_user_email');
         $user -> admin_user_phone = $request -> input('admin_user_phone');
         $user -> admin_user_status = $request -> input('admin_user_status');
