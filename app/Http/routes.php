@@ -23,7 +23,7 @@ Route::resource('/login','Home\LoginController');
 //后台首页
 Route::get('/admin','Admin\AdminController@index');
 //后台登录
-Route::resource('/admin/login','Admin\LoginController');					
+Route::resource('/admin/login','Admin\LoginController');	
 //后台用户管理
 Route::resource('/admin/user','Admin\UserController');
 //后台管理前台用户

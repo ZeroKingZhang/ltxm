@@ -46,6 +46,7 @@ class LoginController extends Controller
                     ->with('message', '用户名密码不正确')
                     ->withInput();
           }
+        
     }
 
     /**

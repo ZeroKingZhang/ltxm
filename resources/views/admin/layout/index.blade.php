@@ -94,7 +94,7 @@
 							<div id="subPages" class="collapse ">
 								<ul class="nav">
 									<li><a href="/admin/user/create" class="">用户添加</a></li>
-									<li><a href="/adin/user" class="">用户列表</a></li>
+									<li><a href="/admin/user" class="">用户列表</a></li>
 									<li><a href="/admin/user/show" class="">回收站</a></li>								
 								</ul>
 							</div>
