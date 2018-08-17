@@ -24,9 +24,6 @@ Route::get('/admin/login/logout','Admin\LoginController@logout');
 Route::resource('/admin/login','Admin\LoginController');					
 
 
-
-
-
 Route::group(['middleware'=>'adminlogin'],function(){
     //后台首页
     Route::get('/admin','Admin\AdminController@index');
