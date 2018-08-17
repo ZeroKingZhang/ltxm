@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5bd58fd976f1ee3e9611bc37c006ec46",
+    "content-hash": "d025fd6a6c710a81b9148b727775cbe6",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -217,6 +217,57 @@
             "time": "2018-01-09T20:05:19+00:00"
         },
         {
+            "name": "germey/geetest",
+            "version": "v3.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Germey/LaravelGeetest.git",
+                "reference": "311e9b4e496b4e44cc570f29a2e17028a3454652"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Germey/LaravelGeetest/zipball/311e9b4e496b4e44cc570f29a2e17028a3454652",
+                "reference": "311e9b4e496b4e44cc570f29a2e17028a3454652",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.*",
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master",
+                "phpunit/phpunit": "~4.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Germey\\Geetest\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Germey",
+                    "email": "cqc@cuiqingcai.com"
+                }
+            ],
+            "description": "Geetest Package for Laravel5",
+            "keywords": [
+                "Germey",
+                "geetest",
+                "laravel"
+            ],
+            "time": "2018-07-12T12:06:28+00:00"
+        },
+        {
             "name": "jakub-onderka/php-console-color",
             "version": "0.1",
             "source": {
@@ -360,6 +411,56 @@
                 "tokenizer"
             ],
             "time": "2018-03-21T22:21:57+00:00"
+        },
+        {
+            "name": "kbwebs/multiauth",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Kbwebs/MultiAuth.git",
+                "reference": "be6b2780fc63b92a956a332f781e43023cfb8233"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Kbwebs/MultiAuth/zipball/be6b2780fc63b92a956a332f781e43023cfb8233",
+                "reference": "be6b2780fc63b92a956a332f781e43023cfb8233",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/auth": "~5.1",
+                "illuminate/console": "~5.1",
+                "illuminate/database": "~5.1",
+                "illuminate/filesystem": "~5.1",
+                "illuminate/support": "~5.1",
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Kbwebs\\MultiAuth\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kasper Basse",
+                    "email": "kasperbasse@gmail.com"
+                }
+            ],
+            "description": "MultiAuth for Laravel 5.1",
+            "keywords": [
+                "auth",
+                "laravel",
+                "login",
+                "multi",
+                "multiauth",
+                "signin",
+                "user"
+            ],
+            "time": "2015-09-12T08:04:15+00:00"
         },
         {
             "name": "laravel/framework",

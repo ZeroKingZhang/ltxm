@@ -106,7 +106,7 @@ class UserController extends Controller
     {
         // dd($id);
         $user = AdminUser::find($id);
-        $user -> admin_user_password = $request -> input('admin_user_password');
+        $user -> admin_user_password = Hash::make($request -> input('admin_user_password'));
         $user -> admin_user_email = $request -> input('admin_user_email');
         $user -> admin_user_phone = $request -> input('admin_user_phone');
         $user -> admin_user_status = $request -> input('admin_user_status');

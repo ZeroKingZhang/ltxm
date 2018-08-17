@@ -12,6 +12,8 @@
 				<tr>
 					<th>ID</th>
 					<th>图片</th>
+					<th>图片标题</th>
+					<th>是否显示</th>
 					<th>创建时间</th>
 					<th>最后修改时间</th>
 					<th>操作</th>
@@ -24,7 +26,15 @@
 					<td>{{$v->id}}</td>		
 					<td>
 						<img src="{{$v->carousel_pic}}" width="50">
-					</td>				
+					</td>
+					<td>{{$v->carousel_title}}</td>
+					<td>
+					@if ( $v-> isshow == '0' )
+					    否
+					@elseif ( $v-> isshow == '1' )
+					    是
+					@endif
+					</td> 
 					<td>{{$v->created_at}}</td>		
 					<td>{{$v->updated_at}}</td>		
 					<td>

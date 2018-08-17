@@ -34,13 +34,14 @@
 								<p class="lead">后台登录</p>
 							</div>
 							<form class="form-auth-small" action="/admin/login" method="post">
+								{{ csrf_field() }}
 								<div class="form-group">
 									<label for="signin-name" class="control-label sr-only">账号</label>
-									<input type="text" class="form-control" name="signin-name">
+									<input type="text" class="form-control" name="admin_name">
 								</div>
 								<div class="form-group">
 									<label for="signin-password" class="control-label sr-only">密码</label>
-									<input type="password" class="form-control" id="signin-password" name="signin-password">
+									<input type="password" class="form-control" id="signin-password" name="admin_password">
 								</div>
 								<div class="form-group clearfix">
 									<label class="fancy-checkbox element-left">

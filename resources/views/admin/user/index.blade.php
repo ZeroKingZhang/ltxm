@@ -28,15 +28,15 @@
 	<div class="panel-body">
 		<table class="table table-bordered"  style="text-align:center;">
 		<thead>
-			<tr>
+			<tr white-space:nowrap;>
 				<th style="text-align:center;">ID</th>
 				<th style="text-align:center;">用户名</th>
-				<th>权限</th>
-				<th>邮箱</th>
-				<th>手机号</th>
-				<th>创建时间</th>
-				<th>修改时间</th>
-				<th>操作</th>
+				<th style="text-align:center;">权限</th>
+				<th style="text-align:center;">邮箱</th>
+				<th style="text-align:center;">手机号</th>
+				<th style="text-align:center;">创建时间</th>
+				<th style="text-align:center;">修改时间</th>
+				<th style="text-align:center;">操作</th>
 			</tr>									
 		</thead>
 		<tbody>
@@ -57,17 +57,17 @@
 				<td>{{ $v-> admin_user_phone }}</td>
 				<td>{{ $v-> created_at }}</td>
 				<td>{{ $v-> updated_at }}</td>
-				<td>
+				<td  style="padding-left: 2px;padding: 3px;">
 					<form action="/admin/user/{{ $v->admin_user_id }}/edit" method="post" style="display:inline">
 						{{ csrf_field() }}
 						{{ method_field('GET') }}
-						<input type="submit" value="修改" class="btn btn-warning">
+						<input type="submit" value="修改" class="btn btn-warning" style="padding: 6px 13px;">
 					</form>
 
-					<form action="/admin/user/{{ $v->admin_user_id }}" method="post" style="display:inline">
+					<form action="/admin/user/{{ $v->admin_user_id }}" method="post" style="display:inline-block;">
 						{{ csrf_field() }}
 						{{ method_field('DELETE') }}
-						<input type="submit" value="删除" class="btn btn-danger" style="display:inline">
+						<input type="submit" value="删除" class="btn btn-danger" style="padding: 6px 13px;">
 					</form>
 					
 				</td>
@@ -96,7 +96,7 @@
   			</ul>
 		</nav> -->
 		<span style="width:300px;display:block;margin:0 auto;">
-		{!! $data -> render() !!}
+		{!! $data -> appends($request) -> render() !!}
 		</span>
 	</div>
 <!-- 内容结束 -->

@@ -69,7 +69,10 @@ class HomeUserController extends Controller
      */
     public function edit($id)
     {
-        //
+        //获取数据
+        $data = User::find($id);
+        //添加模板
+        return view('admin.home.edit', ['data' => $data]);
     }
 
     /**
@@ -81,7 +84,14 @@ class HomeUserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+        $user ->upwd = md5($request -> input('upwd'));
+        $res = $user ->save();
+        if($res){
+             return redirect('/admin/home/user') -> with('success','修改成功');
+         }else{
+            return back() -> with('error','修改失败');
+         }
     }
 
     /**

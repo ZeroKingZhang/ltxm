@@ -76,7 +76,7 @@
 								<li><a href="#"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
 								<li><a href="#"><i class="lnr lnr-envelope"></i> <span>Message</span></a></li>
 								<li><a href="#"><i class="lnr lnr-cog"></i> <span>Settings</span></a></li>
-								<li><a href="#"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
+								<li><a href="/admin/login/logout"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
 							</ul>
 						</li>
 					</ul>
@@ -98,7 +98,15 @@
 									<li><a href="/admin/user/show" class="">回收站</a></li>								
 								</ul>
 							</div>
-							<a href="/admin/home/user" class="active"><i class="lnr lnr-code"></i> <span>前台用户</span></a>
+						</li>
+						<li>
+							<a href="#subPages0" data-toggle="collapse" class="collapsed"><i class="lnr lnr-user"></i> <span>前台用户</span>
+							<i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="subPages0" class="collapse ">
+								<ul class="nav">
+								<li><a href="/admin/home/user" class="">用户列表</a></li>
+								</ul>
+                            </div>
 						</li>
 						<li>
 							<a href="#subPages1" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>帖子管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
@@ -129,7 +137,6 @@
 									<li><a href="/admin/carousel/create" class="">轮播图上传</a></li>
 								</ul>
 							</div>
-
 						</li>
 						<li>
 							<a href="#subPages4" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>敏感词管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
@@ -140,7 +147,6 @@
 									
 								</ul>
 							</div>
-
 						</li>
 						<li>
 							<a href="#subPages5" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>友情链接管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
@@ -152,8 +158,17 @@
 							</div>
 						</li>
 						<li>
-							<a href="#subPages6" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>公告管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<a href="#subPages6" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>声明版权</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages6" class="collapse ">
+								<ul class="nav">
+									<li><a href="/clause" class="">使用条款</a></li>	
+									<li><a href="/declaration" class="">法律、免责</a></li>	
+									<li><a href="/copyright" class="">版权声明</a></li>	
+								</ul>
+							</div>
+							<li>	
+							<a href="#subPages7" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>公告管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="subPages7" class="collapse ">
 								<ul class="nav">
 									<li><a href="/admin/announcement/create" class="">公告添加</a></li>
 									<li><a href="/admin/announcement" class="">公告浏览</a></li>	
@@ -161,16 +176,9 @@
 							</div>
 						</li>
 					</ul>
-					
-
 				</nav>
-			</div>
-			
+			</div>	
 		</div>
-
-
-
-
 		<!-- END LEFT SIDEBAR -->
 		<!-- MAIN -->
 		<div class="main">
