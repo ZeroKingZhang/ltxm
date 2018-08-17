@@ -129,7 +129,6 @@
 									<li><a href="/admin/carousel/create" class="">轮播图上传</a></li>
 								</ul>
 							</div>
-
 						</li>
 						<li>
 							<a href="#subPages4" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>敏感词管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
@@ -140,7 +139,6 @@
 									
 								</ul>
 							</div>
-
 						</li>
 						<li>
 							<a href="#subPages5" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>友情链接管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
@@ -157,7 +155,10 @@
 								<ul class="nav">
 									<li><a href="/clause" class="">使用条款</a></li>	
 									<li><a href="/declaration" class="">法律、免责</a></li>	
-									<li><a href="/copyright" class="">版权声明</a></li>		
+									<li><a href="/copyright" class="">版权声明</a></li>	
+								</ul>
+							</div>
+							<li>	
 							<a href="#subPages7" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>公告管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages7" class="collapse ">
 								<ul class="nav">
@@ -167,8 +168,6 @@
 							</div>
 						</li>
 					</ul>
-					
-
 				</nav>
 			</div>
 			
