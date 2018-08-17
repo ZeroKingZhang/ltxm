@@ -106,7 +106,7 @@
 								<ul class="nav">
 									
 									<li><a href="/admin/invitation" class="">帖子显示</a></li>
-									<li><a href="page-lockscreen.html" class="">回收站</a></li>
+									<li><a href="/invitation/softdeletes" class="">回收站</a></li>
 								</ul>
 							</div>
 						</li>
@@ -158,6 +158,11 @@
 									<li><a href="/clause" class="">使用条款</a></li>	
 									<li><a href="/declaration" class="">法律、免责</a></li>	
 									<li><a href="/copyright" class="">版权声明</a></li>		
+							<a href="#subPages7" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>公告管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="subPages7" class="collapse ">
+								<ul class="nav">
+									<li><a href="/admin/announcement/create" class="">公告添加</a></li>
+									<li><a href="/admin/announcement" class="">公告浏览</a></li>	
 								</ul>
 							</div>
 						</li>

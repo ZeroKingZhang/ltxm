@@ -40,7 +40,11 @@
 												<td>
 													<a href="#" class="btn btn-info">加精</a>
 													<a href="#" class="btn btn-success">置顶</a >
-													<a href="#" class="btn btn-danger">删除</a>
+													<form action="/admin/invitation/{{$v->invitation_id}}" method="POST" style=" display:inline;">
+													{{ csrf_field() }}
+													{{ method_field('DELETE') }}
+													<input type="submit" value="删除" class="btn btn-danger" >
+													</form>
 												</td>		
 											</tr>										
 										</tbody>
@@ -48,21 +52,4 @@
 									</table>
 								</div>
 							</div>
-
-							<script type="text/javascript">
-			function del(obj,id){
-				// 获取删除的id
-				$.get('/admin/forum'+id,function(msg){
-					if(msg == 'success'){
-						// 显示错误信息
-						
-						// 删除节点
-						$(obj).parent().parent().remove();
-					}else{
-						alert('当前删除失败');
-					}
-				},'html');	
-			}
-
-		</script>
 @endsection

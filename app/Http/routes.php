@@ -26,6 +26,7 @@ Route::resource('/admin/login','Admin\LoginController');
 
 
 
+
 Route::group(['middleware'=>'adminlogin'],function(){
     //后台首页
     Route::get('/admin','Admin\AdminController@index');
@@ -47,4 +48,8 @@ Route::group(['middleware'=>'adminlogin'],function(){
 	Route::get('/declaration','Admin\AdminController@declaration');
 	Route::get('/clause','Admin\AdminController@clause');
 	Route::get('/copyright','Admin\AdminController@copyright');
+	Route::resource('/admin/announcement','Admin\announcementController');
+	//公告管理
+	Route::get('/admin/announcement/disabled/{id}','Admin\announcementController@disabled');
+	Route::get('/admin/announcement/start/{id}','Admin\announcementController@start');
 });

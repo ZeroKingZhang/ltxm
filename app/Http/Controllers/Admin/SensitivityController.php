@@ -56,10 +56,7 @@ class SensitivityController extends Controller
             }else{
                  DB::rollBack();
                  return back()->with('error','添加失败');
-            }
-
-        
-
+            }        
     }
 
     /**
