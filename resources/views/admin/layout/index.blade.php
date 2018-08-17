@@ -98,7 +98,15 @@
 									<li><a href="/admin/user/show" class="">回收站</a></li>								
 								</ul>
 							</div>
-							<a href="/admin/home/user" class="active"><i class="lnr lnr-code"></i> <span>前台用户</span></a>
+						</li>
+						<li>
+							<a href="#subPages0" data-toggle="collapse" class="collapsed"><i class="lnr lnr-user"></i> <span>前台用户</span>
+							<i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="subPages0" class="collapse ">
+								<ul class="nav">
+								<li><a href="/admin/home/user" class="">用户列表</a></li>
+								</ul>
+                            </div>
 						</li>
 						<li>
 							<a href="#subPages1" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>帖子管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
