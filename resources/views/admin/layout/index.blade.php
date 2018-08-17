@@ -152,7 +152,7 @@
 							</div>
 						</li>
 						<li>
-							<a href="#subPages6" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>声明版权</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<a href="#subPages6" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>版权声明</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages6" class="collapse ">
 								<ul class="nav">
 									<li><a href="/clause" class="">使用条款</a></li>	
