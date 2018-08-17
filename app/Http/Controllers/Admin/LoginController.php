@@ -52,7 +52,7 @@ class LoginController extends Controller
         
 
        $uname = $request->input('admin_name');
-       $upwd  = $request -> input('admin_password');
+       $upwd  = $request -> input('admin_password'); 
        $res=DB::table('admin_user')->where('admin_user_name','=',$uname)->select('admin_user_password')->first();
        // dd($res);
        if (Hash::check($upwd, $res->admin_user_password)) {
