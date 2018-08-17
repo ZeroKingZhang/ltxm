@@ -177,13 +177,8 @@
 						</li>
 					</ul>
 				</nav>
-			</div>
-			
+			</div>	
 		</div>
-
-
-
-
 		<!-- END LEFT SIDEBAR -->
 		<!-- MAIN -->
 		<div class="main">
