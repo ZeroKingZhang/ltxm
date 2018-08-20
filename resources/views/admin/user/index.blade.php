@@ -13,9 +13,9 @@
 	<div class="input-group" style="width:250px;float:left;margin-left: 25px;">
 		<span class="input-group-addon">显示</span>
 		<select class="form-control" name="count">
-			<option value="3" @if( !empty($request['count']) && isset($request['count']) &&  $request['count']==3 ) selected @endif>10</option>
+			<option value="3" @if( !empty($request['count']) && isset($request['count']) &&  $request['count']==3 ) selected @endif>3</option>
 			<option value="5" @if( !empty($request['count']) && isset($request['count']) &&  $request['count']==5 )selected @endif>5</option>
-			<option value="10" @if( !empty($request['count']) && isset($request['count']) &&  $request['count']==10 ) selected @endif>3</option>
+			<option value="10" @if( !empty($request['count']) && isset($request['count']) &&  $request['count']==10 ) selected @endif>10</option>
 		</select>
 		<span class="input-group-addon">条/页</span>
 	</div>
@@ -73,28 +73,8 @@
 				</td>
 			</tr>
 		@endforeach
-		<!-- {!! $data -> render() !!} -->
 			</tbody>
 		</table>
-		<!-- <nav aria-label="Page navigation" style="margin-right:5px;">
-  			<ul class="pagination">
-	    		<li>
-	      			<a href="#" aria-label="Previous">
-	        		<span aria-hidden="true">&laquo;</span>
-	      			</a>
-	   			 </li>
-	    		<li><a href="#">1</a></li>
-	    		<li><a href="#">2</a></li>
-	    		<li><a href="#">3</a></li>
-	    		<li><a href="#">4</a></li>
-	    		<li><a href="#">5</a></li>
-	    		<li>
-	      			<a href="#" aria-label="Next">
-	        		<span aria-hidden="true">&raquo;</span>
-	      			</a>
-	    		</li>
-  			</ul>
-		</nav> -->
 		<span style="width:300px;display:block;margin:0 auto;">
 		{!! $data -> appends($request) -> render() !!}
 		</span>
