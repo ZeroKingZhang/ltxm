@@ -46,8 +46,8 @@
                 <div class="header-right">
                     <div class="w3-header-top">
                         <ul>
-                            <li><i class="fa " aria-hidden="true"></i> 意见反馈:</li>
-                            <li><i class="fa fa-envelope" aria-hidden="true"></i> : <a href="mailto:info@example.com">mail@example.com</a></li>
+                            <li><i class="fa " aria-hidden="true"></i> <a href="/login">登录</a></li>
+                            <li> <a href="/register">注册</a></li>
                         </ul>
                     </p>
                     </div>
@@ -65,8 +65,8 @@
                                 <!-- Collect the nav links, forms, and other content for toggling -->
                                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                     <ul class="nav navbar-nav">
-                                        <li><a class="active" href="index.html">Home</a></li>
-                                        <li><a href="about.html">About</a></li>
+                                        <li><a class="active" href="/">首页</a></li>
+                                        <li><a href="about.html">版块</a></li>
                                         <li class=""><a href="#" class="dropdown-toggle hvr-bounce-to-bottom" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Codes<span class="caret"></span></a>
                                             <ul class="dropdown-menu">
                                                 <li><a class="hvr-bounce-to-bottom" href="icons.html">Icons</a></li>
@@ -88,220 +88,8 @@
                                 <li><a href="#"><i class="fa fa-vk"></i></a></li>
                             </ul>
                         </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-        </div>
-        <div class="w3layouts-banner-slider">
-            <div class="container">
-                <div class="slider">
-                    <div class="callbacks_container">
-                        <ul class="rslides callbacks callbacks1" id="slider4">
-                            <li>
-                                <div class="agileits-banner-info">
-                                    <h6>varius</h6>
-                                    <h3>Your Holiday!</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sit amet massa in eros euismod suscipit at ut augue. Donec imperdiet risus vel sem luctus, a viverra augue ornare.</p>
-                                    <div class="w3-button">
-                                        <a href="single.html">More</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="agileits-banner-info">
-                                    <h6>Lorem</h6>
-                                    <h3>Your Trip!</h3>
-                                    <p>Mauris ac diam vestibulum, vestibulum risus tincidunt, accumsan neque. Praesent pellentesque ullamcorper scelerisque. Nam vestibulum augue quam, ac hendrerit odio molestie ornare. Etiam</p>
-                                    <div class="w3-button">
-                                        <a href="single.html">More</a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <script src="js/responsiveslides.min.js"></script>
-                    <script>
-                        // You can also use "$(window).load(function() {"
-                        $(function () {
-                          // Slideshow 4
-                          $("#slider4").responsiveSlides({
-                            auto: true,
-                            pager:true,
-                            nav:true,
-                            speed: 500,
-                            namespace: "callbacks",
-                            before: function () {
-                              $('.events').append("<li>before event fired.</li>");
-                            },
-                            after: function () {
-                              $('.events').append("<li>after event fired.</li>");
-                            }
-                          });
-                    
-                        });
-                     </script>
-                    <!--banner Slider starts Here-->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- //banner -->
-    <!-- welcome -->
-    <div class="welcome">
-        <div class="container">
-            <div class="w3l-heading">
-                <h2>Welcome</h2>
-            </div>
-            <div class="w3-welcome-grids">
-                <div class="col-md-7 w3-welcome-left">
-                    <h5>Lorem ipsum dolor sit amet</h5>
-                    <p>Ut fringilla euismod sagittis. Cras semper ante sapien, in ornare nisi euismod eu. Morbi dapibus est non leo vestibulum aliquet. Sed viverra nisi pharetra, scelerisque nisi eu, tempus nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In pellentesque, lectus at auctor luctus, lacus nibh dignissim ante, sed maximus arcu odio vitae lectus. <span>Phasellus vestibulum velit sed nisi ultricies scelerisque. Vivamus ligula mauris, euismod in dictum id, tempus ac odio. Etiam tristique felis eros, tincidunt interdum elit gravida et. Donec porttitor vehicula tortor, malesuada aliquet nibh finibus ac. Maecenas consectetur nisi ipsum, blandit finibus quam tristique vitae.</span></p>
-                    <div class="w3l-button">
-                        <a href="single.html">More</a>
-                    </div>
-                </div>
-                <div class="col-md-5 w3ls-welcome-img1">
-                    <img src="images/2.jpg" alt="" />
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-            <div class="w3-welcome-grids w3-welcome-bottom">
-                <div class="col-md-5 w3ls-welcome-img1 w3ls-welcome-img2">
-                    <img src="images/3.jpg" alt="" />
-                </div>
-                <div class="col-md-7 w3-welcome-left">
-                    <h5>Lorem ipsum dolor sit amet</h5>
-                    <p>Ut fringilla euismod sagittis. Cras semper ante sapien, in ornare nisi euismod eu. Morbi dapibus est non leo vestibulum aliquet. Sed viverra nisi pharetra, scelerisque nisi eu, tempus nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In pellentesque, lectus at auctor luctus, lacus nibh dignissim ante, sed maximus arcu odio vitae lectus. <span>Phasellus vestibulum velit sed nisi ultricies scelerisque. Vivamus ligula mauris, euismod in dictum id, tempus ac odio. Etiam tristique felis eros, tincidunt interdum elit gravida et. Donec porttitor vehicula tortor, malesuada aliquet nibh finibus ac. Maecenas consectetur nisi ipsum, blandit finibus quam tristique vitae.</span></p>
-                    <div class="w3l-button">
-                        <a href="single.html">More</a>
-                    </div>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-        </div>
-    </div>
-    <!-- //welcome -->
-    <!-- services -->
-    <div class="services">
-        <div class="container">
-            <div class="w3l-heading">
-                <h3>Services</h3>
-            </div>
-            <div class="agileits-services">
-                <div class="services-right-grids">
-                    <div class="col-sm-4 services-right-grid">
-                        <div class="services-icon hvr-radial-in">
-                            <i class="fa fa-anchor" aria-hidden="true"></i>
-                        </div>
-                        <div class="services-icon-info">
-                            <h5>Phasellus suscipit</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci enim, posuere sed tincidunt et, pellentesque eget mi.</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 services-right-grid">
-                        <div class="services-icon hvr-radial-in">
-                            <i class="fa fa-comment" aria-hidden="true"></i>
-                        </div>
-                        <div class="services-icon-info">
-                            <h5>Phasellus suscipit</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci enim, posuere sed tincidunt et, pellentesque eget mi.</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 services-right-grid">
-                        <div class="services-icon hvr-radial-in">
-                            <i class="fa fa-heartbeat" aria-hidden="true"></i>
-                        </div>
-                        <div class="services-icon-info">
-                            <h5>Phasellus suscipit</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci enim, posuere sed tincidunt et, pellentesque eget mi.</p>
-                        </div>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-                <div class="services-right-grids">
-                    <div class="col-sm-4 services-right-grid">
-                        <div class="services-icon hvr-radial-in">
-                            <i class="fa fa-magnet" aria-hidden="true"></i>
-                        </div>
-                        <div class="services-icon-info">
-                            <h5>Phasellus suscipit</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci enim, posuere sed tincidunt et, pellentesque eget mi.</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 services-right-grid">
-                        <div class="services-icon hvr-radial-in">
-                            <i class="fa fa-heartbeat" aria-hidden="true"></i>
-                        </div>
-                        <div class="services-icon-info">
-                            <h5>Phasellus suscipit</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci enim, posuere sed tincidunt et, pellentesque eget mi.</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 services-right-grid">
-                        <div class="services-icon hvr-radial-in">
-                            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-                        </div>
-                        <div class="services-icon-info">
-                            <h5>Phasellus suscipit</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci enim, posuere sed tincidunt et, pellentesque eget mi.</p>
-                        </div>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- //services -->
-    <!-- news -->
-    <div class="news">
-        <div class="container">
-            <div class="w3l-heading">
-                <h3>News</h3>
-            </div>
-            <div class="wthree-news-grids">
-                <div class="col-md-5 agile-news-left">
-                    <img src="images/4.jpg" alt="" />
-                </div>
-                <div class="col-md-7 agile-news-right">
-                    <div class="date-grid">
-                        <div class="admin">
-                            <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Admin</a>
-                        </div>
-                        <div class="time">
-                            <p><i class="fa fa-calendar" aria-hidden="true"></i> May 09,2016</p>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                    <div class="w3-agile-news-info">
-                        <a href="single.html">Aenean id lorem <span>efficitur, porttitor</span> eros dapibus</a>
-                    </div>
-                    <div class="w3l-button">
-                        <a href="single.html">More</a>
-                    </div>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-        </div>
-    </div>
-    <!-- //news -->
-    <!-- newsletter -->
-    <div class="jarallax newsletter">
-        <div class="container">
-            <div class="w3l-heading newsletter-heading">
-                <h3>Join The Club</h3>
-            </div>
-        </div>
-        <div class="w3-agileits-newsletter">
-            <div class="subscribe-grid">
-                <form action="#" method="post">
-                    <input type="text" placeholder="Subscribe" name="Subscribe" required="">
-                    <button class="btn1"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
-                </form>
-            </div>
-        </div>
-    </div>
+
+   
     <!-- //newsletter -->
     <!-- footer -->
     <div class="footer">

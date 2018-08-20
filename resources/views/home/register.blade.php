@@ -58,9 +58,9 @@
 						    <input type="text" class="form-control" name="phone" placeholder="请输入手机号" value="{{ old('phone') }}" ><span></span>
 						</div>
 						<div class="form-group col-md-7 col-sm-7 col-xs-7">
-						    <button  class="tm-btn-subscribe"><a href="/login">登录</a></button>
-						    
 						    <button type="submit" class="tm-btn-subscribe">注册</button>
+						    <button  class="tm-btn-subscribe"><a href="/login">登录</a></button>
+						    <button class="tm-btn-subscribe"><a href="/">返回首页</a></button>
 						</div>
                     </form>
 					<div class="tm-social-icons-container text-xs-center">

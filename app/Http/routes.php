@@ -21,7 +21,7 @@ Route::resource('/register','Home\RegisterController');
 Route::resource('/login','Home\LoginController');
 //后台登录
 Route::get('/admin/login/logout','Admin\LoginController@logout');
-Route::resource('/admin/login','Admin\LoginController');					
+Route::resource('/admin/login','Admin\LoginController');
 
 
 Route::group(['middleware'=>'adminlogin'],function(){
