@@ -45,6 +45,7 @@
 							<div class="form-group col-md-7 col-sm-7 col-xs-7">
 								<button type="submit" class="tm-btn-subscribe">登录</button>
 								<button class="tm-btn-subscribe"><a href="/register">注册</a></button>
+								<button class="tm-btn-subscribe"><a href="/">返回首页</a></button>
 							</div>
 						</div>
                     </form>
