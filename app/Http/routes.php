@@ -11,9 +11,9 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('home.index');
-// });
+Route::get('/', function () {
+    return view('home.index');
+});
 //前台注册
 Route::resource('/register','Home\RegisterController');
 //前台登录
@@ -21,6 +21,8 @@ Route::resource('/login','Home\LoginController');
 //后台登录
 Route::get('/admin/login/logout','Admin\LoginController@logout');
 Route::resource('/admin/login','Admin\LoginController');					
+
+
 Route::group(['middleware'=>'adminlogin'],function(){
     //后台首页
     Route::get('/admin','Admin\AdminController@index');
