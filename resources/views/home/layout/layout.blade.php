@@ -88,7 +88,7 @@
                                 <li><a href="#"><i class="fa fa-vk"></i></a></li>
                             </ul>
                         </div>
-<div class="clearfix"> </div>
+                     <div class="clearfix"> </div>
                     </div>
                 </div>
                 <div class="clearfix"> </div>
@@ -96,7 +96,11 @@
         </div>
         <div class="w3layouts-banner-slider">
             <div class="container">
-               
+               <!-- 内容开始 -->
+
+               <!-- 内容结束 -->
+            </div>
+        </div>
     </div>
     <!-- //banner -->
    
