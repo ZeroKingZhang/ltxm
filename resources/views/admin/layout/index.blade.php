@@ -95,7 +95,7 @@
 								<ul class="nav">
 									<li><a href="/admin/user/create" class="">用户添加</a></li>
 									<li><a href="/admin/user" class="">用户列表</a></li>
-									<li><a href="/admin/user/show" class="">回收站</a></li>								
+									<li><a href="/adminUser/index" class="">回收站</a></li>								
 								</ul>
 							</div>
 						</li>
@@ -114,7 +114,7 @@
 								<ul class="nav">
 									
 									<li><a href="/admin/invitation" class="">帖子显示</a></li>
-									<li><a href="/invitation/softdeletes" class="">回收站</a></li>
+									<li><a href="/softdelete" class="">回收站</a></li>
 								</ul>
 							</div>
 						</li>
@@ -203,11 +203,6 @@
 		</div>
 		<!-- END MAIN -->
 		<div class="clearfix"></div>
-		<footer>
-			<div class="container-fluid">
-				<p class="copyright">Copyright &copy; 2017.Company name All rights reserved.More Templates</p>
-			</div>
-		</footer>
 	</div>
 	<!-- END WRAPPER -->
 	<!-- Javascript -->

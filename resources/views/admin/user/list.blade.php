@@ -7,9 +7,9 @@
 
 <div class="panel">
 	<div class="panel-heading">
-		<h3 class="panel-title">用户列表</h3>
+		<h3 class="panel-title">回收站</h3>
 	</div>
-	<form action="/admin/user">
+	<form action="/adminUser/index">
 	<div class="input-group" style="width:250px;float:left;margin-left: 25px;">
 		<span class="input-group-addon">显示</span>
 		<select class="form-control" name="count">
@@ -34,13 +34,12 @@
 				<th style="text-align:center;">权限</th>
 				<th style="text-align:center;">邮箱</th>
 				<th style="text-align:center;">手机号</th>
-				<th style="text-align:center;">创建时间</th>
-				<th style="text-align:center;">修改时间</th>
+				<th style="text-align:center;">删除时间</th>
 				<th style="text-align:center;">操作</th>
 			</tr>									
 		</thead>
 		<tbody>
-		 @foreach($data as $k => $v)
+		 @foreach($deldata as $k => $v)
 			<tr>
 				<td>{{ $v-> admin_user_id }}</td>
 				<td>{{ $v-> admin_user_name }}</td>
@@ -52,31 +51,20 @@
 				 	@elseif ( $v-> admin_user_status == '2' )
 					    普通用户
 					@endif
-							     </td> 
+				</td> 
 				<td>{{ $v-> admin_user_email }}</td>
 				<td>{{ $v-> admin_user_phone }}</td>
-				<td>{{ $v-> created_at }}</td>
-				<td>{{ $v-> updated_at }}</td>
-				<td  style="padding-left: 2px;padding: 3px;">
-					<form action="/admin/user/{{ $v->admin_user_id }}/edit" method="post" style="display:inline-block;">
-						{{ csrf_field() }}
-						{{ method_field('GET') }}
-						<input type="submit" value="修改" class="btn btn-warning" style="padding: 6px 13px;">
-					</form>
-
-					<form action="/admin/user/{{ $v->admin_user_id }}" method="post" style="display:inline-block;">
-						{{ csrf_field() }}
-						{{ method_field('DELETE') }}
-						<input type="submit" value="删除" class="btn btn-danger" style="padding: 6px 13px;">
-					</form>
-					
+				<td>{{ $v-> deleted_at }}</td>
+				<td  style="padding-left: 1px;padding: 1px;">
+					<a href="/adminUser/rollback/{{ $v -> admin_user_id }}" class="btn btn-warning" style="padding: 6px 10px;display:inline-block;">恢复</a>
+						<a href="/adminUser/destory/{{ $v -> admin_user_id }}" class="btn btn-danger" style="padding: 6px 10px;display:inline-block;">彻底删除</a>				
 				</td>
 			</tr>
 		@endforeach
 			</tbody>
 		</table>
 		<span style="width:300px;display:block;margin:0 auto;">
-		{!! $data -> appends($request) -> render() !!}
+		{!! $deldata ->appends($request) -> render() !!}
 		</span>
 	</div>
 <!-- 内容结束 -->
