@@ -124,7 +124,7 @@
 								<ul class="nav">
 									<li><a href="/admin/forum/create" class="">版块添加</a></li>
 									<li><a href="/admin/forum" class="">版块显示</a></li>
-									<li><a href="/admin/forum" class="">回收站</a></li>
+									<li><a href="/forumdelete" class="">回收站</a></li>
 								</ul>
 							</div>
 						</li>
