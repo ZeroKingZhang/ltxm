@@ -25,6 +25,7 @@ class HomeUserController extends Controller
         // dump($search);
         //获取数据
         $data = User::where('uname','like','%'.$search.'%') ->orderBy('id') -> paginate($count);
+        // dd($data);
         //加载模板
          return view('admin.home.index',['data'=>$data,'request'=>$request->all()]);
     }

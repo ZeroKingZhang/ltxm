@@ -54,9 +54,6 @@
 						<div class="form-group col-md-7 col-sm-7 col-xs-7"">
 						    <input type="email" class="form-control" name="email" placeholder="请输入邮箱" value="{{ old('email') }}" ><span></span>
 						</div>
-						<div class="form-group col-md-7 col-sm-7 col-xs-7"">
-						    <input type="text" class="form-control" name="phone" placeholder="请输入手机号" value="{{ old('phone') }}" ><span></span>
-						</div>
 						<div class="form-group col-md-7 col-sm-7 col-xs-7">
 						    <button type="submit" class="tm-btn-subscribe">注册</button>
 						    <button  class="tm-btn-subscribe"><a href="/login">登录</a></button>

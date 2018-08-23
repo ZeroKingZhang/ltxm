@@ -13,6 +13,7 @@
 <!--// css -->
 <!-- font-awesome icons -->
 <link href="css/font-awesome.css" rel="stylesheet"> 
+<link rel="stylesheet" href="/layui/css/layui.css" media="all">
 <!-- //font-awesome icons -->
 <!-- font -->
 <link href="//fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i,700,700i" rel="stylesheet">
@@ -28,10 +29,26 @@
             $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
         });
     });
-</script> 
-<!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<![endif]-->
+</script>
+<link rel="stylesheet" href="css/global-min.css">
+    <script src="js/kissy-min.js"></script>
+    <script src="js/global-min.js"></script>
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/2016-10-20style-min.css"/>
+        <script src="js/package-config.js"></script>
+        <script type="text/javascript">
+        FB.config({
+            name: 'index',
+            path: '//g.alicdn.com/tb/bbs/1.2.0/pie',
+            version: '1.0',
+            charset: 'gbk',
+            pub: '20121114',
+            tag: '20120304'            });
+    </script>
+    <script>rain = {};rain.tag = "20141204";</script>
+    <script src="js/lib.min.js"></script>
+    <script src="js/laputa-min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/laputa.css"> 
 </head>
 <body>
     <!-- banner -->
@@ -67,12 +84,7 @@
                                     <ul class="nav navbar-nav">
                                         <li><a class="active" href="/">首页</a></li>
                                         <li><a href="about.html">版块</a></li>
-                                        <li class=""><a href="#" class="dropdown-toggle hvr-bounce-to-bottom" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Codes<span class="caret"></span></a>
-                                            <ul class="dropdown-menu">
-                                                <li><a class="hvr-bounce-to-bottom" href="icons.html">Icons</a></li>
-                                                <li><a class="hvr-bounce-to-bottom" href="typography.html">Typography</a></li>          
-                                            </ul>
-                                        </li>                               
+                                        <li><a href="/home/charts">排行榜</a></li>                            
                                         <li><a href="gallery.html">Gallery</a></li>
                                         <li><a href="contact.html">Contact</a></li>
                                     </ul>   
@@ -97,7 +109,10 @@
         <div class="w3layouts-banner-slider">
             <div class="container">
                <!-- 内容开始 -->
+                  @section('content')
+                  
 
+                  @show
                <!-- 内容结束 -->
             </div>
         </div>

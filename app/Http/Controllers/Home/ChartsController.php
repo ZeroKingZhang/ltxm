@@ -6,13 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Home\UserStoreRequest;
-use App\User;
-use DB;
-use Germey\Geetest;
-use Hash;
 
-class RegisterController extends Controller
+class ChartsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,7 +16,7 @@ class RegisterController extends Controller
      */
     public function index()
     {
-        return view('home.register');
+        return view();
     }
 
     /**
@@ -31,7 +26,7 @@ class RegisterController extends Controller
      */
     public function create()
     {
-       //
+        //
     }
 
     /**
@@ -40,21 +35,9 @@ class RegisterController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(UserStoreRequest $request)
+    public function store(Request $request)
     {
-        DB::beginTransaction(); //事务开启
-        $user = new User;
-        $user -> uname = $request -> input('uname');
-        $user -> upwd = Hash::make($request -> input('upwd'));
-        $user -> email = $request -> input('email');
-        $res1 =  $user -> save();
-        if($res1){
-            DB::commit(); //提交事务
-            return redirect('/login')->with('success','注册成功');
-        }else{
-            DB::rollBcak(); //回滚事务
-            return redirect('/register')->with('error','注册失败');
-        }
+        //
     }
 
     /**
