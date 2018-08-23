@@ -39,7 +39,7 @@ Route::group(['middleware'=>'adminlogin'],function(){
 	Route::resource('/admin/invitation','Admin\InvitationController');
 	//版块管理
 	Route::resource('/admin/forum','Admin\ForumController');
-	Route::resource('/admin/forum/show1','Admin\ForumController@show1');
+	Route::resource('/admin/forum/shosForumController@show1');
 	//版块软删除管理
 	Route::controller('/forumdelete','Admin\ForumdeleteController');
 	Route::controller('/softdelete','Admin\softdeletesController');
