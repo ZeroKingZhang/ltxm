@@ -79,7 +79,7 @@
 								<ul class="nav">
 									<li><a href="/admin/user/create" class="">用户添加</a></li>
 									<li><a href="/admin/user" class="">用户列表</a></li>
-									<li><a href="/admin/user/show" class="">回收站</a></li>								
+									<li><a href="/adminUser/index" class="">回收站</a></li>								
 								</ul>
 							</div>
 						</li>
@@ -98,7 +98,7 @@
 								<ul class="nav">
 									
 									<li><a href="/admin/invitation" class="">帖子显示</a></li>
-									<li><a href="/invitation/softdeletes" class="">回收站</a></li>
+									<li><a href="/softdelete" class="">回收站</a></li>
 								</ul>
 							</div>
 						</li>
@@ -108,7 +108,7 @@
 								<ul class="nav">
 									<li><a href="/admin/forum/create" class="">版块添加</a></li>
 									<li><a href="/admin/forum" class="">版块显示</a></li>
-									<li><a href="/admin/forum" class="">回收站</a></li>
+									<li><a href="/forumdelete" class="">回收站</a></li>
 								</ul>
 							</div>
 						</li>
@@ -142,7 +142,7 @@
 							</div>
 						</li>
 						<li>
-							<a href="#subPages6" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>声明版权</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<a href="#subPages6" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>版权声明</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages6" class="collapse ">
 								<ul class="nav">
 									<li><a href="/clause" class="">使用条款</a></li>	
@@ -187,11 +187,6 @@
 		</div>
 		<!-- END MAIN -->
 		<div class="clearfix"></div>
-		<footer>
-			<div class="container-fluid">
-				<p class="copyright">Copyright &copy; 2017.Company name All rights reserved.More Templates</p>
-			</div>
-		</footer>
 	</div>
 	<!-- END WRAPPER -->
 	<!-- Javascript -->

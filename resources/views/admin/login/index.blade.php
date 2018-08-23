@@ -43,12 +43,12 @@
 									<label for="signin-password" class="control-label sr-only">密码</label>
 									<input type="password" class="form-control" id="signin-password" name="admin_password">
 								</div>
-								<div class="form-group clearfix">
+								<!-- <div class="form-group clearfix">
 									<label class="fancy-checkbox element-left">
 										<input type="checkbox">
-										<span>Remember me</span>
+										<span>记住账号</span>
 									</label>
-								</div>
+								</div> -->
 								<button type="submit" class="btn btn-primary btn-lg btn-block">登录</button>
 								<button type="reset" class="btn btn-primary btn-lg btn-block">重置</button>
 								<div class="bottom">

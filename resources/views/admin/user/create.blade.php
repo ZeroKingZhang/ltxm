@@ -8,7 +8,7 @@
 		<h3 class="panel-title">用户添加</h3>
 	</div>
 	<form action="/admin/user" method="POST">
-		{{ csrf_field() }}
+		
 		@if (count($errors) > 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       )
 	    <div class="alert alert-danger alert-dismissible">
 	        <ul>
@@ -18,6 +18,7 @@
 	        </ul>
 	    </div>
 		@endif
+		{{ csrf_field() }}
 		<div class="panel-body" style="width:500px;height:600px;margin:0px auto;">
 			<label>用户名：</label>
 			<input type="text"  class="form-control" name="admin_user_name" value="{{ old('admin_user_name') }}" placeholder="请输入用户名" style="width:400px">
