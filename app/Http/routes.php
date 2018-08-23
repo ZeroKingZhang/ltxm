@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('home.index');
+    return view('home.index.index');
 });
 
 //前台注册
@@ -22,6 +22,8 @@ Route::resource('/login','Home\LoginController');
 //后台登录
 Route::get('/admin/login/logout','Admin\LoginController@logout');
 Route::resource('/admin/login','Admin\LoginController');
+//排行榜
+Route::resource('/home/login','Home\ChartsController');
 
 
 Route::group(['middleware'=>'adminlogin'],function(){

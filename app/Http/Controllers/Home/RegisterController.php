@@ -8,7 +8,6 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Home\UserStoreRequest;
 use App\User;
-use App\Models\Home_User_detail;
 use DB;
 use Germey\Geetest;
 use Hash;
@@ -49,12 +48,7 @@ class RegisterController extends Controller
         $user -> upwd = Hash::make($request -> input('upwd'));
         $user -> email = $request -> input('email');
         $res1 =  $user -> save();
-        $id = $user -> id;
-        $userdetail = new Home_User_detail;
-        $userdetail ->uid = $id;
-        $userdetail -> phone =  $request -> input('phone');
-        $res2 = $userdetail -> save();
-        if($res1 && $res2){
+        if($res1){
             DB::commit(); //提交事务
             return redirect('/login')->with('success','注册成功');
         }else{

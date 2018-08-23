@@ -43,9 +43,10 @@ class LoginController extends Controller
        $uname = $request->input('admin_name');
        $upwd  = $request -> input('admin_password');
        $res=DB::table('admin_user')->where('admin_user_name','=',$uname)->select('admin_user_password')->first();
-       // dd($res);
+       // dd(Hash::check($upwd, $res->admin_user_password));
        if (Hash::check($upwd, $res->admin_user_password)) {
         $request->session()->put('adminFlag', true);
+        $request->session()->put('adminuser', $uname);
         return redirect('/admin')->with('message', '成功登录');
         }
        return back()->with('message', '用户名密码不正确')->withInput();
