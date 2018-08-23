@@ -31,8 +31,6 @@ class DeleteController extends Controller
 
     public function getDestory(Request $request,$id)
     {      
-        //开启事务
-         // DB::beginTransaction();
         //删除并得到结果
         $flights = AdminUser::onlyTrashed()->find($id);
         $flights->forceDelete();

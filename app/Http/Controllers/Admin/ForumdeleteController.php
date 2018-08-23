@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Forum;
 use DB;
-class DeleteController extends Controller
+class ForumdeleteController extends Controller
 {
     /**
      * Display a listing of the resource.

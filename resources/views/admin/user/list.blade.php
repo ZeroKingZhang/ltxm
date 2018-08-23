@@ -57,7 +57,7 @@
 				<td>{{ $v-> deleted_at }}</td>
 				<td  style="padding-left: 1px;padding: 1px;">
 					<a href="/adminUser/rollback/{{ $v -> admin_user_id }}" class="btn btn-warning" style="padding: 6px 10px;display:inline-block;">恢复</a>
-						<a href="/adminUser/destory/{{ $v -> admin_user_id }}" class="btn btn-danger" style="padding: 6px 10px;display:inline-block;">彻底删除</a>				
+					<a href="/adminUser/destory/{{ $v -> admin_user_id }}" class="btn btn-danger" style="padding: 6px 10px;display:inline-block;">彻底删除</a>				
 				</td>
 			</tr>
 		@endforeach
