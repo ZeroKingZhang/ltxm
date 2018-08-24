@@ -19,42 +19,48 @@ Route::get('/', function () {
 Route::resource('/register','Home\RegisterController');
 //前台登录
 Route::resource('/login','Home\LoginController');
+//前台个人信息
+Route::resource('/myinfo','Home\MyinfoController');
 //后台登录
 Route::get('/admin/login/logout','Admin\LoginController@logout');
 Route::resource('/admin/login','Admin\LoginController');
 //排行榜
 Route::resource('/home/login','Home\ChartsController');
 
-
 Route::group(['middleware'=>'adminlogin'],function(){
     //后台首页
-    Route::get('/admin','Admin\AdminController@index');
+Route::get('/admin','Admin\AdminController@index');
     //后台用户管理
-	Route::resource('/admin/user','Admin\UserController'); 
+Route::resource('/admin/user','Admin\UserController'); 
 	//后台用户软删除管理
-	Route::controller('/adminUser','Admin\DeleteController');
+Route::resource('/admin/user','Admin\UserController');
 	//后台管理前台用户
-	Route::resource('/admin/home/user','Admin\HomeUserController');
+Route::resource('/admin/home/user','Admin\HomeUserController');
 	//帖子管理
-	Route::resource('/admin/invitation','Admin\InvitationController');
+Route::resource('/admin/invitation','Admin\InvitationController');
 	//版块管理
-	Route::resource('/admin/forum','Admin\ForumController');
-	Route::resource('/admin/forum/shosForumController@show1');
+Route::resource('/admin/forum','Admin\ForumController');
+Route::resource('/admin/forum/show1','Admin\ForumController@show1');
 	//版块软删除管理
-	Route::controller('/forumdelete','Admin\ForumdeleteController');
-	Route::controller('/softdelete','Admin\softdeletesController');
+Route::controller('/forumdelete','Admin\ForumdeleteController');
+Route::controller('/softdelete','Admin\softdeletesController');
+
+Route::resource('/admin/invitation','Admin\InvitationController');
+Route::resource('/admin/forum','Admin\ForumController');
+Route::resource('/admin/forum/show1','Admin\ForumController@show1');
 	//敏感词管理
-	Route::resource('/admin/sensitivity','Admin\SensitivityController');
+Route::resource('/admin/sensitivity','Admin\SensitivityController');
 	//友情链接管理
-	Route::resource('/admin/blogroll','Admin\BlogrollController');
+Route::resource('/admin/blogroll','Admin\BlogrollController');
 	//轮播图设置
-	Route::resource('/admin/carousel','Admin\CarouselController');
+Route::resource('/admin/carousel','Admin\CarouselController');
 	//申明设置
-	Route::get('/declaration','Admin\AdminController@declaration');
-	Route::get('/clause','Admin\AdminController@clause');
-	Route::get('/copyright','Admin\AdminController@copyright');
-	Route::resource('/admin/announcement','Admin\announcementController');
+Route::get('/declaration','Admin\AdminController@declaration');
+Route::get('/clause','Admin\AdminController@clause');
+Route::get('/copyright','Admin\AdminController@copyright');
+Route::resource('/admin/announcement','Admin\announcementController');
 	//公告管理
-	Route::get('/admin/announcement/disabled/{id}','Admin\announcementController@disabled');
-	Route::get('/admin/announcement/start/{id}','Admin\announcementController@start');
+Route::get('/admin/announcement/disabled/{id}','Admin\announcementController@disabled');
+Route::get('/admin/announcement/start/{id}','Admin\announcementController@start');
 });
+

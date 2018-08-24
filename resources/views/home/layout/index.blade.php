@@ -14,6 +14,7 @@
 <!-- font-awesome icons -->
 <link href="css/font-awesome.css" rel="stylesheet"> 
 <link rel="stylesheet" href="/layui/css/layui.css" media="all">
+<link rel="stylesheet" href="css/all-df86af5803_2.css">
 <!-- //font-awesome icons -->
 <!-- font -->
 <link href="//fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i,700,700i" rel="stylesheet">
@@ -49,6 +50,31 @@
     <script src="js/lib.min.js"></script>
     <script src="js/laputa-min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/laputa.css"> 
+      <script src="js/all-17476e6cc3.js"></script>
+        <script type="text/javascript">
+            Hifone.Config = {
+                'locale' : 'zh-CN',
+                'current_user_id' : 25,
+                'token' : 'wX0v5iEs9NbIfx8IJ45zS8nWSZPQbnoRWe5QoFvu',
+                'emoj_cdn' : 'http://localhost',
+                'uploader_url' : 'https://www.010hub.com/upload_image',
+                'notification_url' : 'https://www.010hub.com/notification/count'
+            };
+        </script>
+        <script type="text/javascript">
+            Hifone.jsLang = {
+                'delete_form_title' : 'Confirm your Action',
+                'delete_form_text' : 'Are you sure you want to do this?',
+                'uploading_file' : 'Uploading file...',
+                'loading' : 'Loading...',
+                'content_is_empty' : 'Content is empty',
+                'operation_success' : '操作成功!',
+                'error_occurred' : 'An error occurred',
+                'button_yes' : 'Yes',
+                'like' : '赞',
+                'dislike' : '踩'
+            };
+        </script>
 </head>
 <body>
     <!-- banner -->
@@ -86,7 +112,7 @@
                                         <li><a href="about.html">版块</a></li>
                                         <li><a href="/home/charts">排行榜</a></li>                            
                                         <li><a href="gallery.html">Gallery</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="/myinfo">我的信息</a></li>
                                     </ul>   
                                     <div class="clearfix"> </div>
                                 </div>  
