@@ -23,7 +23,9 @@ Route::resource('/login','Home\LoginController');
 Route::get('/admin/login/logout','Admin\LoginController@logout');
 Route::resource('/admin/login','Admin\LoginController');
 //排行榜
-Route::resource('/home/login','Home\ChartsController');
+Route::resource('/charts','Home\ChartsController');
+//发帖
+Route::resource('/post','Home\PostController');
 
 Route::group(['middleware'=>'adminlogin'],function(){
     //后台首页
@@ -58,7 +60,7 @@ Route::get('/clause','Admin\AdminController@clause');
 Route::get('/copyright','Admin\AdminController@copyright');
 Route::resource('/admin/announcement','Admin\announcementController');
 	//公告管理
-Route::get('/admin/announcement/disabled/{id}','Admin\announcementController@disabled');
-Route::get('/admin/announcement/start/{id}','Admin\announcementController@start');
+Route::get('/admin/announcement/disabled/{id}','Admin\AnnouncementController@disabled');
+Route::get('/admin/announcement/start/{id}','Admin\AnnouncementController@start');
 });
 

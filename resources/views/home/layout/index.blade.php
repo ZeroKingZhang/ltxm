@@ -20,7 +20,7 @@
 <link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
 <!-- //font -->
-<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.js"></script>
 <script src="js/bootstrap.js"></script>
 <script type="text/javascript">
     jQuery(document).ready(function($) {
@@ -84,7 +84,7 @@
                                     <ul class="nav navbar-nav">
                                         <li><a class="active" href="/">首页</a></li>
                                         <li><a href="about.html">版块</a></li>
-                                        <li><a href="/home/charts">排行榜</a></li>                            
+                                        <li><a href="/charts">排行榜</a></li>                            
                                         <li><a href="gallery.html">Gallery</a></li>
                                         <li><a href="contact.html">Contact</a></li>
                                     </ul>   
@@ -94,10 +94,10 @@
                         </div>
                         <div class="agileinfo-social-grids">
                             <ul>
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                                <li><a href="#"><i class="fa fa-vk"></i></a></li>
+                                <li>分享到:</li>
+                                <li><a href="#"><i class="layui-icon layui-icon-login-wechat"></i></a></li>
+                                <li><a href="#"><i class="layui-icon layui-icon-login-qq"></i></a></li>
+                                <li><a href="#"><i class="layui-icon layui-icon-login-weibo"></i></a></li>
                             </ul>
                         </div>
                      <div class="clearfix"> </div>
@@ -123,43 +123,7 @@
     <!-- footer -->
     <div class="footer">
         <div class="container">
-            <div class="agile-footer-grids">
-                <div class="col-md-4 agile-footer-grid">
-                    <h4>History of Us</h4>
-                    <p>Pellentesque urna ex, ultricies a nunc at, pretium maximus nisi. Vestibulum non auctor diam. Mauris eget consectetur mauris. <span>Aenean leo elit, accumsan vel elit vitae, mattis ultricies lacus. Cras consectetur justo lorem, sed dictum sapien eleifend at.</span></p>
-                </div>
-                <div class="col-md-4 agile-footer-grid">
-                    <h4>Twitter Posts</h4>
-                    <ul class="w3agile_footer_grid_list">
-                        <li>Ut aut reiciendis voluptatibus maiores <a href="#">http://example.com</a> alias, ut aut reiciendis.
-                            <span><i class="fa fa-twitter" aria-hidden="true"></i> 02 days ago</span></li>
-                        <li>Itaque earum rerum hic tenetur a sapiente delectus <a href="#">http://mail.com</a> ut aut
-                            voluptatibus.<span><i class="fa fa-twitter" aria-hidden="true"></i> 03 days ago</span></li>
-                    </ul>
-                </div>
-                <div class="col-md-2 agile-footer-grid">
-                    <h4>Events</h4>
-                    <ul>
-                        <li>12th Aug <a href="single.html">Curabitur</a></li>
-                        <li>10th Sept <a href="single.html">Fusce urna</a></li>
-                        <li>24th Sept <a href="single.html">Praesent</a></li>
-                        <li>17th Oct <a href="single.html">Malesuada </a></li>
-                        <li>09th Dec <a href="single.html">Cum sociis</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-2 agile-footer-grid">
-                    <h4>Navigation</h4>
-                    <ul>
-                        <li class="text"><a href="index.html">Home</a></li>
-                        <li class="text"><a href="about.html">About</a></li>
-                        <li class="text"><a href="icons.html">Icons</a></li>
-                        <li class="text"><a href="typography.html">Typography</a></li>
-                        <li class="text"><a href="gallery.html">Gallery</a></li>
-                        <li class="text"><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
+            友情链接
         </div>
     </div>
     <!-- //footer -->

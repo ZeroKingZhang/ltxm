@@ -1,16 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\AdminUser;
-use DB;
-use Hash;
 
-class LoginController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +16,7 @@ class LoginController extends Controller
      */
     public function index()
     {
-        return view('admin.login.index');
+        return view('home.post.index');
     }
 
     /**
@@ -40,17 +37,7 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-       $uname = $request->input('admin_name');
-       $upwd  = $request -> input('admin_password');
-       $res=DB::table('admin_user')->where('admin_user_name','=',$uname)->select('admin_user_password')->first();
-       // dd(Hash::check($upwd, $res->admin_user_password));
-       if (Hash::check($upwd, $res->admin_user_password)) {
-        $request->session()->put('adminFlag', true);
-        $request->session()->put('adminuser', $uname);
-        return redirect('/admin')->with('message', '成功登录');
-        }
-       return back()->with('message', '用户名密码不正确')->withInput();
-
+        //
     }
 
     /**
@@ -96,11 +83,5 @@ class LoginController extends Controller
     public function destroy($id)
     {
         //
-    }
-    public function logout(Request $request)
-    {
-        //退出登录
-        $request->session()->put('adminFlag', null);
-        return redirect('/admin')->with('message', '成功退出');
     }
 }
