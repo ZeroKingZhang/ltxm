@@ -68,6 +68,33 @@ class SensitivityController extends Controller
     public function show($id)
     {
         //
+        DB::beginTransaction(); //开启事务
+        $forum = Sensitivity::find($id);
+        $forum -> status = 1;
+        $res = $forum -> save();
+        if($res){
+             DB::commit(); //提交事务
+            return redirect('/admin/sensitivity')->with('success','更新成功');
+        }else{
+             DB::rollBack();
+            return back()->with('error','更新失败');
+        }
+    }
+     public function show1($id)
+    {
+        //
+       DB::beginTransaction(); //开启事务
+        $forum = Sensitivity::find($id);
+        $forum -> status = 0;
+        $res = $forum -> save();
+        if($res){
+             DB::commit(); //提交事务
+            return redirect('/admin/sensitivity')->with('success','更新成功');
+        }else{
+             DB::rollBack();
+            return back()->with('error','更新失败');
+        }
+        
     }
 
     /**

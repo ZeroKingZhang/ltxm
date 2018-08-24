@@ -6,10 +6,10 @@
 <meta charset="utf-8">
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- bootstrap-css -->
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!--// bootstrap-css -->
 <!-- css -->
-<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
 <!--// css -->
 <!-- font-awesome icons -->
 <link href="css/font-awesome.css" rel="stylesheet"> 
@@ -19,9 +19,17 @@
 <link href="//fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i,700,700i" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="css/style_1_common.css" />
+<link rel="stylesheet" type="text/css" href="css/style_1_forum_index.css" />
+<link rel="stylesheet" id="css_extstyle" type="text/css" href="css/style.css" />
+<script src="js/home_1.js" type="text/javascript"></script>
+
 <!-- //font -->
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.js"></script>
+<script src="js/forum.js" type="text/javascript"></script>
+<script src="js/logging.js" type="text/javascript"></script>
+<script src="js/forum_slide.js" type="text/javascript"></script>
 <script type="text/javascript">
     jQuery(document).ready(function($) {
         $(".scroll").click(function(event){     
@@ -57,7 +65,7 @@
             <div class="container">
                 <div class="header-left">
                     <div class="w3layouts-logo">
-                       <a href="/"><img src="images/logo.png" alt=""></a>
+                       <a href="/"><img src="/images/logo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="header-right">
@@ -134,10 +142,10 @@
         </div>
     </div>
     <!-- //copyright -->
-    <script src="js/responsiveslides.min.js"></script>
-    <script src="js/SmoothScroll.min.js"></script>
-    <script type="text/javascript" src="js/move-top.js"></script>
-    <script type="text/javascript" src="js/easing.js"></script>
+    <script src="/js/responsiveslides.min.js"></script>
+    <script src="/js/SmoothScroll.min.js"></script>
+    <script type="text/javascript" src="/js/move-top.js"></script>
+    <script type="text/javascript" src="/js/easing.js"></script>
     <!-- here stars scrolling icon -->
     <script type="text/javascript">
         $(document).ready(function() {
@@ -155,7 +163,7 @@
             });
     </script>
     <!-- //here ends scrolling icon -->
-    <script src="js/jarallax.js"></script>
+    <script src="/js/jarallax.js"></script>
     <script type="text/javascript">
             /* init Jarallax */
             $('.jarallax').jarallax({

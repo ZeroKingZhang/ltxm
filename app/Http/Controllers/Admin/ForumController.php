@@ -23,7 +23,7 @@ class ForumController extends Controller
           //接收数据
         $search = $request -> input('search',''); //搜索条件
         $count = $request -> input('count',3); //搜索条数
-        $data = Forum::where('forum_name','like','%'.$search.'%') ->orderBy('forum_id') -> paginate($count);
+        $data = Forum::select('*',DB::raw('concat(path,forum_id) as paths'))->orderBy('paths')->get();
         return view('admin.forum.index',['data'=>$data,'request'=>$request->all()]);
     }
 
@@ -35,7 +35,8 @@ class ForumController extends Controller
     public function create(Request $request)
     {
         //
-        return view('admin.forum.create');
+        $cates = Forum::select('*',DB::raw('concat(path,forum_id) as paths'))->orderBy('paths')->get();
+        return view('admin.forum.create',['cates'=>$cates]);
     }
 
     /**
@@ -63,11 +64,20 @@ class ForumController extends Controller
          }else{
             dd('请选择文件');
          }
+        $pid = $request -> input('pid');
+          if($pid==0){
+            $path='0,'; //如果父类是0，那么path就是'0,'
+        }else{
+            //如果父类ID不是0，那么path就是 父类path连接上父pid  
+            $path=Forum::find($pid)->path."$pid,";         
+        }
          DB::beginTransaction(); //开启事务
          //插入数据库
          $forum = new Forum;
-         $forum -> forum_name = $request -> input('fname');
+         $forum -> forum_name = $request -> input('forum_name');
          $forum -> forum_pic  = $filename;
+         $forum -> pid  = $pid;
+         $forum -> path = $path;
        
          $res = $forum -> save();
          if($res){
@@ -77,6 +87,7 @@ class ForumController extends Controller
             DB::rollBack();
             return back()->with('error','添加失败');
          }
+        dump($request->all());
 
     }   
     

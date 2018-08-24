@@ -45,7 +45,10 @@
 												<td>
 													<img src="{{$v->forum_pic}}" width="50">
 												</td>
-												<td>{{$v->forum_name}}</td>		
+												 <?php
+                                        		$n=substr_count($v->path,',')-1;   //数逗号个数
+                                   				 ?>
+												<td>{{str_repeat('&nbsp;',$n*10)}}|--{{$v->forum_name}}</td>		
 												<td>@if ($v->forum_status == 0)
 														启用
 													@elseif ($v->forum_status == 1)
@@ -68,7 +71,7 @@
 										</tbody>
 										@endforeach
 									</table>
-									{!! $data -> appends($request)->render() !!}
+									
 								</div>
 								
 							

@@ -36,8 +36,8 @@
 												<td>{{$v->updated_at}}</td>		
 												<td>{{$v->created_at}}</td>		
 												<td>
-													<a href="/invitation/softdeletes/restore/{{$v->invitation_id}}" class="btn btn-info">恢复</a>
-													<a href="/invitation/softdeletes/del/{{$v->invitation_id}}" class="btn btn-danger">删除</a>
+											<a href="/invitation/softdeletes/restore/{{$v->invitation_id}}" class="btn btn-info">恢复</a>
+											<a href="/invitation/softdeletes/del/{{$v->invitation_id}}" class="btn btn-danger">删除</a>
 												</td>		
 											</tr>										
 										</tbody>

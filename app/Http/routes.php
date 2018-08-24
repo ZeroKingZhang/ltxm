@@ -11,56 +11,69 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('home.index.index');
 });
+
 
 //前台注册
 Route::resource('/register','Home\RegisterController');
 //前台登录
 Route::resource('/login','Home\LoginController');
-//后台登录
-Route::get('/admin/login/logout','Admin\LoginController@logout');
-Route::resource('/admin/login','Admin\LoginController');
+
 //排行榜
 Route::resource('/charts','Home\ChartsController');
 //发帖
 Route::resource('/post','Home\PostController');
 
+//前台版块列表
+Route::resource('/home/forum','Home\ForumController');
+Route::resource('home/list','Home\ListController');
+
+//-----------后台路由
+
+//后台退出登录
+Route::get('/admin/login/logout','Admin\LoginController@logout');
+//后台登录
+Route::resource('/admin/login','Admin\LoginController');
+//--------后台路由组
 Route::group(['middleware'=>'adminlogin'],function(){
-    //后台首页
+//后台首页
 Route::get('/admin','Admin\AdminController@index');
-    //后台用户管理
+//后台用户管理
 Route::resource('/admin/user','Admin\UserController'); 
-	//后台用户软删除管理
+//后台用户软删除管理
 Route::resource('/admin/user','Admin\UserController');
-	//后台管理前台用户
+Route::resource('/admin/user','Admin\UserController');
+//后台管理前台用户
 Route::resource('/admin/home/user','Admin\HomeUserController');
-	//帖子管理
+//帖子管理
 Route::resource('/admin/invitation','Admin\InvitationController');
-	//版块管理
+//版块管理
 Route::resource('/admin/forum','Admin\ForumController');
 Route::resource('/admin/forum/show1','Admin\ForumController@show1');
-	//版块软删除管理
+//版块软删除管理
 Route::controller('/forumdelete','Admin\ForumdeleteController');
 Route::controller('/softdelete','Admin\softdeletesController');
-
 Route::resource('/admin/invitation','Admin\InvitationController');
 Route::resource('/admin/forum','Admin\ForumController');
 Route::resource('/admin/forum/show1','Admin\ForumController@show1');
-	//敏感词管理
+//软删除
+Route::controller('/invitation/softdeletes','Admin\SoftdeletesController');
+//敏感词管理
 Route::resource('/admin/sensitivity','Admin\SensitivityController');
-	//友情链接管理
+Route::resource('/admin/sensitivity/show1','Admin\SensitivityController@show1');
+//友情链接管理
 Route::resource('/admin/blogroll','Admin\BlogrollController');
-	//轮播图设置
+//轮播图设置
 Route::resource('/admin/carousel','Admin\CarouselController');
-	//申明设置
+//申明设置
 Route::get('/declaration','Admin\AdminController@declaration');
 Route::get('/clause','Admin\AdminController@clause');
 Route::get('/copyright','Admin\AdminController@copyright');
 Route::resource('/admin/announcement','Admin\announcementController');
-	//公告管理
+//公告管理
 Route::get('/admin/announcement/disabled/{id}','Admin\AnnouncementController@disabled');
 Route::get('/admin/announcement/start/{id}','Admin\AnnouncementController@start');
 });
-

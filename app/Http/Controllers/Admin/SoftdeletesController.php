@@ -25,12 +25,10 @@ class SoftdeletesController extends Controller
 
     public function getDel($id)
     {
-        $res = Invitation::find($id)->forceDelete();
-        if($res){
+        $flights = Invitation::onlyTrashed()->find($id);
+        $flights->forceDelete();
+        
             return redirect('/invitation/softdeletes')->with('success','删除成功');
-        }else{
-           return back()->with('error','删除失败'); 
-        }
                    
     }
     public function getRestore($id)
