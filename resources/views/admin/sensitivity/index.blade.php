@@ -28,6 +28,7 @@
 											<tr>
 												<th>敏感词ID</th>
 												<th>敏感词名称</th>
+												<th>敏感词状态</th>
 												
 												<th>操作</th>
 											</tr>
@@ -38,10 +39,16 @@
 											<tr>
 												<td>{{$v->sensitivity_id}}</td>		
 												<td>{{$v->badword}}</td>
+												<td>@if ($v->status == 0)
+														启用
+													@elseif ($v->status == 1)
+														禁用
+													@endif
+												</td>		
 													
 												<td>
 													<a href="/admin/sensitivity/{{$v->sensitivity_id}}" class="btn btn-danger">禁用</a>
-													<a href="/admin/forum/show1/{{$v->sensitivity_id}}" class="btn btn-success">启用</a>
+													<a href="/admin/sensitivity/show1/{{$v->sensitivity_id}}" class="btn btn-success">启用</a>
 													
 													<form action="/sensitivity/{{$v->sensitivity_id}}" method="POST" style=" display:inline;">
 													{{ csrf_field() }}

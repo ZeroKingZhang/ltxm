@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home.index');
-});
+// Route::get('/', function () {
+//     return view('home.layout.layout');
+// });
 //前台注册
 Route::resource('/register','Home\RegisterController');
 //前台登录
@@ -32,10 +32,14 @@ Route::group(['middleware'=>'adminlogin'],function(){
 	Route::resource('/admin/home/user','Admin\HomeUserController');
 	//帖子管理
 	Route::resource('/admin/invitation','Admin\InvitationController');
+	//版块管理
 	Route::resource('/admin/forum','Admin\ForumController');
 	Route::resource('/admin/forum/show1','Admin\ForumController@show1');
+	//软删除
+	Route::controller('/invitation/softdeletes','Admin\SoftdeletesController');
 	//敏感词管理
 	Route::resource('/admin/sensitivity','Admin\SensitivityController');
+	Route::resource('/admin/sensitivity/show1','Admin\SensitivityController@show1');
 	//友情链接管理
 	Route::resource('/admin/blogroll','Admin\BlogrollController');
 	//轮播图设置
@@ -49,6 +53,10 @@ Route::group(['middleware'=>'adminlogin'],function(){
 	Route::get('/admin/announcement/disabled/{id}','Admin\announcementController@disabled');
 	Route::get('/admin/announcement/start/{id}','Admin\announcementController@start');
 });
+
+//前台版块列表
+Route::resource('/home/forum','Home\ForumController');
+Route::resource('home/list','Home\ListController');
 
 
 
