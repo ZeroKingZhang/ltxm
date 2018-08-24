@@ -1,0 +1,1 @@
+INSERT INTO `home_users_detail` VALUES (6, 6, '2131414123', NULL, NULL, NULL, '2018-8-17 06:44:36', '2018-8-17 06:44:36');
