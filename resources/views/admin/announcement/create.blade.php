@@ -34,7 +34,7 @@
 			<br>
 			<label>公告内容：</label>
 				<!-- 加载编辑器的容器 -->
-	    <script id="container" name="content" type="text/plain">
+	    <script id="container" name="content" type="text/plain" style="height: 300px">
 	    </script>
 			 <!-- 实例化编辑器 -->
 		    <script type="text/javascript">

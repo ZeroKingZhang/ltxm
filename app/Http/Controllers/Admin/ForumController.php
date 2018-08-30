@@ -48,22 +48,7 @@ class ForumController extends Controller
     public function store(Request $request)
     {
        // 检测是否有文件上传
-        if($request -> hasFile('forum_pic')){
-            $profile =  $request -> file('forum_pic');// 创建上传对象
-            // 处理文件名称
-            $temp_name = str_random(20);
-            $ext = $profile -> getClientOriginalExtension();//获取后缀
-            $name = $temp_name.'.'.$ext;
-            // 拼接路径
-            $dir = './uploads/'.date('Ymd',time());
-            // 拼接向数据库存储的文件路径
-            $filename = ltrim($dir.'/'.$name,'.');
-             // echo $filename;
-            // 执行上传
-            $profile -> move($dir,$name);
-         }else{
-            dd('请选择文件');
-         }
+        
         $pid = $request -> input('pid');
           if($pid==0){
             $path='0,'; //如果父类是0，那么path就是'0,'
@@ -75,7 +60,7 @@ class ForumController extends Controller
          //插入数据库
          $forum = new Forum;
          $forum -> forum_name = $request -> input('forum_name');
-         $forum -> forum_pic  = $filename;
+         $forum -> forum_info  = $request -> input('forum_info');
          $forum -> pid  = $pid;
          $forum -> path = $path;
        
@@ -151,27 +136,10 @@ class ForumController extends Controller
     public function update(Request $request, $id)
     {
         //
-        // 检测是否有文件上传
-        if($request -> hasFile('forum_pic')){
-            $profile =  $request -> file('forum_pic');// 创建上传对象
-            // 处理文件名称
-            $temp_name = str_random(20);
-            $ext = $profile -> getClientOriginalExtension();//获取后缀
-            $name = $temp_name.'.'.$ext;
-            // 拼接路径
-            $dir = './uploads/'.date('Ymd',time());
-            // 拼接向数据库存储的文件路径
-            $filename = ltrim($dir.'/'.$name,'.');
-             // echo $filename;
-            // 执行上传
-            $profile -> move($dir,$name);
-         }else{
-            dd('请选择文件');
-         }
          DB::beginTransaction(); //开启事务
          $forum = Forum::find($id);
          $forum -> forum_name = $request -> input('fname');
-         $forum -> forum_pic  = $filename;
+         $forum -> forum_info  = $request -> input('forum_info');
          $res = $forum -> save();
           if($res){
             DB::commit(); //提交事务

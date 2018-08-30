@@ -11,7 +11,7 @@
 |
 */
 
-
+//前台首页
 Route::get('/', function () {
     return view('home.index.index');
 });
@@ -19,6 +19,8 @@ Route::get('/', function () {
 
 //前台注册
 Route::resource('/register','Home\RegisterController');
+//前台退出
+Route::get('/logout','Home\LoginController@logout');
 //前台登录
 Route::resource('/login','Home\LoginController');
 
@@ -28,8 +30,38 @@ Route::resource('/charts','Home\ChartsController');
 Route::resource('/post','Home\PostController');
 
 //前台版块列表
-Route::resource('/home/forum','Home\ForumController');
-Route::resource('home/list','Home\ListController');
+Route::resource('/forum','Home\ForumController');
+//板块帖子列表
+Route::resource('/list','Home\ListController');
+//帖子列表
+Route::resource('/invitation','Home\InvitationController');
+//帖子详情
+Route::resource('/note','Home\NoteController');
+//用户详细信息
+Route::get('/user/invitation/{id}','Home\UserinfoController@invitation');//用户发帖信息
+Route::get('/user/note/{id}','Home\UserinfoController@note');//用户回复信息
+Route::get('/user/pic/{id}','Home\UserinfoController@pic');//用户图片上传
+Route::post('/user/upload','Home\UserinfoController@upload');//用户图片上传
+Route::resource('/user','Home\UserinfoController');
+
+//--------前台路由组
+Route::group(['middleware'=>'homelogin'],function(){
+	//前台个人信息
+	
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //-----------后台路由
 

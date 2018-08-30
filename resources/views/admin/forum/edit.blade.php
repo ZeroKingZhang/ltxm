@@ -22,9 +22,8 @@
 			<label>版块名称：</label>
 			<input type="text"  class="form-control" name="fname" value="{{$data->forum_name}}" placeholder="请输入版块名称" style="width:400px">
 			<br>
-			<label>版块图片：</label>
-			<img src="{{$data->forum_pic}}" width="100">
-			<input type="file"  class="form-control" name="forum_pic" value= "" style="width:400px">
+			<label>版块详情：</label>
+			<input type="text"  class="form-control" name="forum_info" value= "{{$data->forum_info}}" style="width:400px">
 			<br>
 			<input type="submit" value="提交" class="btn btn-success">
 			<input type="reset" value="重置" class="btn btn-info">

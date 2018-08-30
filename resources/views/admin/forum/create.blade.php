@@ -19,26 +19,23 @@
 	        </ul>
 	    </div>
 	    @endif
-                   <div class="panel-body" style="width:500px;height:600px;margin:0px auto;">
-                      	<label>版块分类：</label>
-                                <select name="pid" id="catid" class="required">
-                                    <option value="0">顶级版块</option>
-                                    @foreach ($cates  as $k=>$v) 
-                                    <?php
-                                        $n=substr_count($v->path,',')-1;   //数逗号个数
-                                    ?>
-                                     <option value="{{$v->forum_id}}">{{str_repeat('&nbsp;',$n*5)}}|--{{$v->forum_name}}</option>   
-                                    @endforeach
-                                </select>
-                                <br>
-                           
-                       
-                       
-                               <label>版块名称：</label>
+      <div class="panel-body" style="width:500px;height:600px;margin:0px auto;">
+         	<label>版块分类：</label>
+                   <select name="pid" id="catid" class="required">
+                    <option value="0">顶级版块</option>
+                    @foreach ($cates  as $k=>$v) 
+                    <?php
+                        $n=substr_count($v->path,',')-1;   //数逗号个数
+                    ?>
+                     <option value="{{$v->forum_id}}">{{str_repeat('&nbsp;',$n*5)}}|--{{$v->forum_name}}</option>   
+                    @endforeach
+                </select>
+              <br>    
+            <label>版块名称：</label>
 				<input type="text"  class="form-control" name="forum_name" value="" placeholder="请输入版块名称" style="width:400px">
 				<br>
-				<label>版块图片：</label>
-			<input type="file"  class="form-control" name="forum_pic" value= "" style="width:400px">
+				<label>版块详情：</label>
+			<input type="text"  class="form-control" name="forum_info" value= "" style="width:400px">
 			<br>
             <input type="submit" value="提交" class="btn btn-success">
 			<input type="reset" value="重置" class="btn btn-info">            
@@ -46,7 +43,5 @@
    </div>
            </form>
            
-        </div>
-
-   
+</div>
 @endsection

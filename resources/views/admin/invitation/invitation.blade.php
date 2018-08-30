@@ -24,15 +24,14 @@
 											
 											<tr>
 												<td>{{$v->invitation_id}}</td>		
-												<td>{{$v->ititle}}</td>		
+												<td>{{$v->ititle}}</td>
 												<td>@if ($v->istatus == 1)
-														精品
+														普通
 													@elseif	($v->istatus ==2)
-														置顶
+														精品
 													@elseif ($v->istatus ==3)
-														禁用
+														置顶
 													@endif
-
 												</td>		
 												<td>{{$v->uid}}</td>		
 												<td>{{$v->updated_at}}</td>		

@@ -23,19 +23,17 @@ class User extends Model implements AuthenticatableContract,
      */
     protected $table = 'home_users';
 
+    public $primaryKey  = 'uid';
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = ['name', 'email', 'password'];
-
-    /**
-     * The attributes excluded from the model's JSON form.
-     *
-     * @var array
-     */
-    protected $hidden = ['password', 'remember_token'];
-
+    //一对多用户发帖数量
+    public function userinvitation()
+    {
+        return $this->hasMany('App\Models\Invitation','uid');
+    }
+    //一对多评论
+    public function usernote()
+    {
+        return $this->hasMany('App\Models\Note','uid');
+    }
+    
 }

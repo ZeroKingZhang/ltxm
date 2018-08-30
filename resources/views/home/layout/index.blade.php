@@ -12,55 +12,26 @@
 <link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
 <!--// css -->
 <!-- font-awesome icons -->
-<link href="css/font-awesome.css" rel="stylesheet"> 
+<link href="/css/font-awesome.css" rel="stylesheet"> 
 <link rel="stylesheet" href="/layui/css/layui.css" media="all">
 <!-- //font-awesome icons -->
 <!-- font -->
-<link href="//fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i,700,700i" rel="stylesheet">
-<link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="css/style_1_common.css" />
-<link rel="stylesheet" type="text/css" href="css/style_1_forum_index.css" />
-<link rel="stylesheet" id="css_extstyle" type="text/css" href="css/style.css" />
-<script src="js/home_1.js" type="text/javascript"></script>
-
+<link rel="stylesheet" id="css_extstyle" type="text/css" href="/css/style.css" />
 <!-- //font -->
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/forum.js" type="text/javascript"></script>
-<script src="js/logging.js" type="text/javascript"></script>
-<script src="js/forum_slide.js" type="text/javascript"></script>
-<script type="text/javascript">
-    jQuery(document).ready(function($) {
-        $(".scroll").click(function(event){     
-            event.preventDefault();
-            $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-        });
-    });
-</script>
-<link rel="stylesheet" href="css/global-min.css">
-    <script src="js/kissy-min.js"></script>
-    <script src="js/global-min.js"></script>
-    <link rel="stylesheet" href="css/nav.css" />
-    <link rel="stylesheet" href="css/2016-10-20style-min.css"/>
-        <script src="js/package-config.js"></script>
-        <script type="text/javascript">
-        FB.config({
-            name: 'index',
-            path: '//g.alicdn.com/tb/bbs/1.2.0/pie',
-            version: '1.0',
-            charset: 'gbk',
-            pub: '20121114',
-            tag: '20120304'            });
-    </script>
-    <script>rain = {};rain.tag = "20141204";</script>
-    <script src="js/lib.min.js"></script>
-    <script src="js/laputa-min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/laputa.css"> 
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap.js"></script>
+<link rel="stylesheet" href="/css/global-min.css">
+    <script src="/js/kissy-min.js"></script>
+    <link rel="stylesheet" href="/css/nav.css" />
+    <link rel="stylesheet" href="/css/2016-10-20style-min.css"/>
+        <script src="/js/package-config.js"></script>
+    <script src="/js/lib.min.js"></script>
+    <script src="/js/laputa-min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/laputa.css"> 
 </head>
 <body>
     <!-- banner -->
-    <div class="banner">
+     <div class="banner">
         <div class="header">
             <div class="container">
                 <div class="header-left">
@@ -71,8 +42,16 @@
                 <div class="header-right">
                     <div class="w3-header-top">
                         <ul>
+                            @if(  Session::get('homeUserInfo') ) 
+                            <li><i class="fa " aria-hidden="true"> {{ Session::get('homeUserInfo') }}</li>
+                            &nbsp; &nbsp; &nbsp;
+                            <li><a href="/logout" name="logout">退出</a></li>                         
+                            <li><a href="/user/{{$login_user->uid}}">我的信息</a></li>                         
+                            @else
                             <li><i class="fa " aria-hidden="true"></i> <a href="/login">登录</a></li>
-                            <li> <a href="/register">注册</a></li>
+                            <li><a href="/register">注册</a></li>                          
+                            @endif                       
+                            
                         </ul>
                     </p>
                     </div>
@@ -91,10 +70,9 @@
                                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                     <ul class="nav navbar-nav">
                                         <li><a class="active" href="/">首页</a></li>
-                                        <li><a href="about.html">版块</a></li>
+                                        <li><a href="/forum">版块</a></li>
                                         <li><a href="/charts">排行榜</a></li>                            
                                         <li><a href="gallery.html">Gallery</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
                                     </ul>   
                                     <div class="clearfix"> </div>
                                 </div>  

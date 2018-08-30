@@ -40,7 +40,7 @@ class InvitationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        echo 'index';
     }
 
     /**

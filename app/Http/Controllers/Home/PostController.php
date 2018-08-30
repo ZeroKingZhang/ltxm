@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Models\Forum;
+use App\Models\Invitation;
+use DB;
 
 class PostController extends Controller
 {
@@ -16,7 +19,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('home.post.index');
+        //
     }
 
     /**
@@ -37,7 +40,22 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         DB::beginTransaction(); //开启事务
+         //插入数据库
+         $invitation = new Invitation;
+         $invitation -> ititle = $request -> input('title');
+         $invitation -> content  = $request -> input('content');
+         $invitation -> forum_id  = $request -> input('forum_id');
+         $invitation -> uid     = 1;
+         $forumid = $request -> input('forum_id');
+         $res = $invitation -> save();
+         if($res){
+            DB::commit(); //提交事务
+           return redirect("/list/$forumid")->with('success','添加成功');
+         }else{
+            DB::rollBack();
+            return back()->with('error','添加失败');
+         }
     }
 
     /**
@@ -48,7 +66,9 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $data=DB::table('forums')->where('forum_id',$id)->first();
+        $data2=DB::table('forums')->where('forum_id',$data->pid)->first();
+        return view('home.post.index',['data'=>$data,'data2'=>$data2]);
     }
 
     /**

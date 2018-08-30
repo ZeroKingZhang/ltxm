@@ -10,6 +10,7 @@ use App\Models\Forum;
 
 class ForumController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *

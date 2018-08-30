@@ -4963,7 +4963,7 @@ a.label:focus {
 .badge {
   display: inline-block;
   min-width: 10px;
-  padding: 3px 7px;
+  padding: 3px 22px;
   font-size: 12px;
   font-weight: bold;
   line-height: 1;

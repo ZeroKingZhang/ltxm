@@ -29,7 +29,7 @@
 										<thead>
 											<tr>
 												<th>版块ID</th>
-												<th>版块图片</th>
+												<th>版块详情</th>
 												<th>版块名称</th>
 												<th>版块状态</th>
 												<th>创建时间</th>
@@ -43,7 +43,7 @@
 											<tr>
 												<td>{{$v->forum_id}}</td>		
 												<td>
-													<img src="{{$v->forum_pic}}" width="50">
+													{{$v->forum_info}}
 												</td>
 												 <?php
                                         		$n=substr_count($v->path,',')-1;   //数逗号个数

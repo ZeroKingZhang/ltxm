@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Models\Invitation;
+use App\Models\Forum;
+use DB;
 
 class ListController extends Controller
 {
@@ -47,9 +50,17 @@ class ListController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request,$id)
     {
-        //
+        //接收数据
+        $count = $request -> input('count',10); //搜索条数
+        //获取数据
+        $data = Invitation::where('forum_id',$id) ->orderBy('updated_at') -> paginate($count);
+        // dd($data);
+        
+        // $data1 = DB::table('forums')->where('forum_id', $id)->get();
+        //加载模板
+         return view('home.list.index',['data'=>$data,'request'=>$request->all()]);
     }
 
     /**

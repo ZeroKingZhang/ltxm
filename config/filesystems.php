@@ -61,7 +61,11 @@ return [
             // 'ssl'      => true,
             // 'timeout'  => 30,
         ],
-
+        'uploads' => [
+            'driver' => 'local',
+            /// 文件将上传到public/uploads目录 
+            'root' => public_path('uploads'),
+        ],
         's3' => [
             'driver' => 's3',
             'key'    => 'your-key',

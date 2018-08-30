@@ -99,4 +99,10 @@ class LoginController extends Controller
     {
         //
     }
+    public function logout(Request $request)
+    {
+        $request->session()->put('homeFlag', null);
+        $request->session()->put('homeUserInfo', null);
+        return redirect('/')->with('message', '成功退出');
+    }
 }
