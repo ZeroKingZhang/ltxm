@@ -66,9 +66,8 @@
     </ul>
      @endforeach
 	    <div class="pull-right add-padding-vertically">
-	        
-	    </div>
-      
+        {!! $invitation -> appends($request) -> render() !!}
+        </div>
     </div>
 
   </div>

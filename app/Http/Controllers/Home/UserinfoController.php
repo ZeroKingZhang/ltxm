@@ -10,6 +10,7 @@ use App\User;
 use App\Models\Invitation;
 use App\Models\Note;
 use DB;
+use Hash;
 
 class UserinfoController extends Controller
 {
@@ -41,7 +42,23 @@ class UserinfoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //修改用户密码
+        $uid = $request->input('uid');
+        $opwd = $request -> input('opwd');
+        $upwd = $request -> input('upwd');
+        $reupwd = $request -> input('reupwd');
+        if($upwd == $reupwd){
+            $res=DB::table('home_users')->where('uid','=',$uid)->select('upwd')->first();
+            if(Hash::check($opwd, $res->upwd)){
+            $user = User::find($uid);
+            $user -> upwd = Hash::make($request -> input('upwd'));
+            $res1 =  $user -> save();
+            $request->session()->put('homeFlag', null); //清空登录信息
+            $request->session()->put('homeUserInfo',null);//清空登录信息
+            return redirect('/')->with('success','修改成功，请重新登录');
+            }
+        }
+        return back()->with('error','两次密码输入不一致');
     }
 
     /**
@@ -107,10 +124,10 @@ class UserinfoController extends Controller
     //用户发帖信息
     public function invitation(Request $request, $id)
     {
-        $invitation = Invitation::where('uid',$id)->get();//获取用户所有发帖
+        $invitation = Invitation::where('uid',$id)->orderBy('created_at','desc')-> paginate(10);//获取用户所有发帖
         $user = User::where('uid','=',$id)->first();
         $homeUserInfo = $request->session()->get('homeUserInfo');
-        return view('home.user.invitation',['invitation'=>$invitation,'user'=>$user,'homeUserInfo'=>$homeUserInfo]);
+        return view('home.user.invitation',['invitation'=>$invitation,'user'=>$user,'request'=>$request->all(),'homeUserInfo'=>$homeUserInfo]);
     }
     //用户回复信息
     public function note(Request $request, $id)
@@ -151,10 +168,16 @@ class UserinfoController extends Controller
          $res=DB::table('home_users')->where('uid', $id)->update(['pic' => $filename]);
          if($res){
             DB::commit(); //提交事务
-           return redirect("/user/$id")->with('success','添加成功');
+           return redirect("/user/$id")->with('success','上传成功');
          }else{
             DB::rollBack();
-            return back()->with('error','添加失败');
+            return back()->with('error','上传失败');
          }
+    }
+    //用户修改密码
+    public function password(Request $request, $id)
+    {
+        $user = User::where('uid','=',$id)->first();
+        return view('home.user.password',['user'=>$user]);
     }
 }    

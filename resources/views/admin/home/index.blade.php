@@ -41,15 +41,15 @@
 		<tbody>
 		 @foreach($data as $k => $v)
 			<tr>
-				<td>{{ $v->id }}</td>
+				<td>{{ $v->uid }}</td>
 				<td>{{ $v-> uname }}</td>
 				<td>{{ $v-> email }}</td>
-				<td>{{ $v-> home_user_detail->phone }}</td>
+				<td>{{ $v-> phone }}</td>
 				<td>{{ $v-> created_at }}</td>
 				<td>{{ $v-> updated_at }}</td>
 				<td>
-					<a href="/admin/home/user/{{ $v->id }}/edit" class="btn btn-info">修改</a>
-					<form action="/admin/home/user/{{ $v->id }}" method="post" style="display:inline">
+					<a href="/admin/home/user/{{ $v->uid }}/edit" class="btn btn-info">修改</a>
+					<form action="/admin/home/user/{{ $v->uid }}" method="post" style="display:inline">
 						{{ csrf_field() }}
 						{{ method_field('DELETE') }}
 						<input type="submit" value="删除" class="btn btn-danger">
@@ -60,25 +60,6 @@
 		
 			</tbody>
 		</table>
-		<!-- <nav aria-label="Page navigation" style="margin-right:5px;">
-  			<ul class="pagination">
-	    		<li>
-	      			<a href="#" aria-label="Previous">
-	        		<span aria-hidden="true">&laquo;</span>
-	      			</a>
-	   			 </li>
-	    		<li><a href="#">1</a></li>
-	    		<li><a href="#">2</a></li>
-	    		<li><a href="#">3</a></li>
-	    		<li><a href="#">4</a></li>
-	    		<li><a href="#">5</a></li>
-	    		<li>
-	      			<a href="#" aria-label="Next">
-	        		<span aria-hidden="true">&raquo;</span>
-	      			</a>
-	    		</li>
-  			</ul>
-		</nav> -->
 		<span style="width:300px;display:block;margin:0 auto;">
              {!! $data ->appends($request) -> render() !!}
 		</span>
