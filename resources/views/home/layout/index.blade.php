@@ -19,6 +19,7 @@
 <link rel="stylesheet" id="css_extstyle" type="text/css" href="/css/style.css" />
 <!-- //font -->
 <script src="/js/jquery.js"></script>
+<script src="/layer/src/layer.js"></script>
 <script src="/js/bootstrap.js"></script>
 <link rel="stylesheet" href="/css/global-min.css">
     <script src="/js/kissy-min.js"></script>
@@ -46,7 +47,7 @@
                             <li><i class="fa " aria-hidden="true"> {{ Session::get('homeUserInfo') }}</li>
                             &nbsp; &nbsp; &nbsp;
                             <li><a href="/logout" name="logout">退出</a></li>                         
-                            <li><a href="/user/{{$login_user->uid}}">我的信息</a></li>                         
+                            <li><a href="/user/{{ $login_user->uid }}">我的信息</a></li>                         
                             @else
                             <li><i class="fa " aria-hidden="true"></i> <a href="/login">登录</a></li>
                             <li><a href="/register">注册</a></li>                          
@@ -92,6 +93,24 @@
                 <div class="clearfix"> </div>
             </div>
         </div>
+        @if( session('success') )
+        <script>
+        layer.alert("{{ Session('success') }}", {
+          skin: 'layui-layer-lan' 
+          ,closeBtn: 0
+        });
+        </script>
+        @endif
+        
+        @if( session('error') )
+        <script>
+        layer.alert("{{ Session('error') }}", {
+          skin: 'layui-layer-molv' 
+          ,closeBtn: 0
+        });
+        </script>
+        @endif
+
         <div class="w3layouts-banner-slider">
             <div class="container">
                <!-- 内容开始 -->
@@ -109,14 +128,19 @@
     <!-- footer -->
     <div class="footer">
         <div class="container">
-            友情链接
+        <span class="layui-breadcrumb" lay-separator="-" style="visibility: initial;">
+          <h5>友情链接</h5>
+          @foreach( $blogroll as $k => $v )
+          <a href="http://{{ $v->blogroll_dns }}">{{ $v->blogroll_name }}</a> &nbsp; &nbsp; 
+          @endforeach
+        </span>
         </div>
     </div>
     <!-- //footer -->
     <!-- copyright -->
     <div class="agileits-w3layouts-copyright">
         <div class="container">
-            <p>© 2017 Njoy Travels. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+            <p>义工论坛<a href="http://w3layouts.com">W3layouts</a></p>
         </div>
     </div>
     <!-- //copyright -->
