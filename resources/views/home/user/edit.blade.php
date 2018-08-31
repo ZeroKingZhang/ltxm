@@ -52,7 +52,7 @@
           </div>
           <label>个性签名：</label>
           <div class="form-group">
-            <textarea class="form-control" rows="3" placeholder="{{ $user->signature }}" or ""  name="signature" cols="50"></textarea>
+            <textarea class="form-control" rows="3" value="{{ $user->signature }}"  name="signature" cols="50"></textarea>
           </div>
           <div class="form-group status-post-submit">
             <input class="btn btn-primary" id="user-edit-submit" type="submit" value="确定修改">

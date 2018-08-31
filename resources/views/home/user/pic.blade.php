@@ -29,7 +29,7 @@
         <ul class="nav nav-tabs" role="tablist">
           <li ><a href="/user/{{$user->uid}}">个人信息</a></li>
           <li  class="active" ><a href="">头像</a></li>
-          <li ><a href="https://www.010hub.com/user/25/edit?tab=password">密码</a></li>
+          <li ><a href="/user/password/{{$user->uid}}">密码</a></li>
         </ul>
                 <form class="form-horizontal" method="POST" action="/user/upload" enctype="multipart/form-data">
                 {{ csrf_field() }}

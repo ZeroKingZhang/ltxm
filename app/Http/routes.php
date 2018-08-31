@@ -11,11 +11,11 @@
 |
 */
 
-//前台首页
+
 Route::get('/', function () {
     return view('home.index.index');
 });
-
+//前台首页
 
 //前台注册
 Route::resource('/register','Home\RegisterController');
@@ -41,6 +41,7 @@ Route::resource('/note','Home\NoteController');
 Route::get('/user/invitation/{id}','Home\UserinfoController@invitation');//用户发帖信息
 Route::get('/user/note/{id}','Home\UserinfoController@note');//用户回复信息
 Route::get('/user/pic/{id}','Home\UserinfoController@pic');//用户图片上传
+Route::get('/user/password/{id}','Home\UserinfoController@password');//用户密码修改
 Route::post('/user/upload','Home\UserinfoController@upload');//用户图片上传
 Route::resource('/user','Home\UserinfoController');
 

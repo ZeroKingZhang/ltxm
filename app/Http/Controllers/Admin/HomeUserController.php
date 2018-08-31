@@ -24,7 +24,7 @@ class HomeUserController extends Controller
         $count = $request -> input('count',3); //搜索条数
         // dump($search);
         //获取数据
-        $data = User::where('uname','like','%'.$search.'%') ->orderBy('id') -> paginate($count);
+        $data = User::where('uname','like','%'.$search.'%') ->orderBy('uid') -> paginate($count);
         // dd($data);
         //加载模板
          return view('admin.home.index',['data'=>$data,'request'=>$request->all()]);
