@@ -11,19 +11,18 @@
 |
 */
 
-
-Route::get('/', function () {
-    return view('home.index.index');
-});
+//公告详情
+Route::get('/announcement/{id}','Home\HomeController@announcement');
 //前台首页
-
+Route::resource('/','Home\HomeController');
 //前台注册
 Route::resource('/register','Home\RegisterController');
 //前台退出
 Route::get('/logout','Home\LoginController@logout');
 //前台登录
 Route::resource('/login','Home\LoginController');
-
+//问题与反馈
+Route::resource('/process','Home\ProcessController');
 //排行榜
 Route::resource('/charts','Home\ChartsController');
 //发帖
@@ -86,6 +85,9 @@ Route::resource('/admin/invitation','Admin\InvitationController');
 //版块管理
 Route::resource('/admin/forum','Admin\ForumController');
 Route::resource('/admin/forum/show1','Admin\ForumController@show1');
+//反馈管理
+Route::resource('/admin/process','Admin\ProcessController');
+Route::resource('/admin/processdelete','Admin\ProcessDeleteController');
 //版块软删除管理
 Route::controller('/forumdelete','Admin\ForumdeleteController');
 Route::controller('/softdelete','Admin\softdeletesController');

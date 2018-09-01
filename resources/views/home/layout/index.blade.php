@@ -73,7 +73,7 @@
                                         <li><a class="active" href="/">首页</a></li>
                                         <li><a href="/forum">版块</a></li>
                                         <li><a href="/charts">排行榜</a></li>                            
-                                        <li><a href="gallery.html">Gallery</a></li>
+                                        <li><a href="/process">意见与反馈</ a></li>
                                     </ul>   
                                     <div class="clearfix"> </div>
                                 </div>  
@@ -128,10 +128,12 @@
     <!-- footer -->
     <div class="footer">
         <div class="container">
-        <span class="layui-breadcrumb" lay-separator="-" style="visibility: initial;">
-          <h5>友情链接</h5>
+            <h5>友情链接</h5>
+        <span class="layui-breadcrumb" style="visibility: initial;">
           @foreach( $blogroll as $k => $v )
-          <a href="http://{{ $v->blogroll_dns }}">{{ $v->blogroll_name }}</a> &nbsp; &nbsp; 
+          <a href="http://{{ $v->blogroll_dns }}">{{ $v->blogroll_name }}</a>
+          <a>&nbsp; &nbsp; </a>
+          <a>&nbsp; &nbsp; </a>
           @endforeach
         </span>
         </div>

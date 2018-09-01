@@ -61,7 +61,8 @@ class CarouselController extends Controller
          //插入数据库
          $carousel = new Carousel;
          $carousel -> carousel_pic  = $filename;
-       
+         $carousel -> isshow  =  $request -> input('isshow');
+         $carousel -> carousel_title  =  $request -> input('carousel_title');
          $res = $carousel -> save();
          if($res){
             DB::commit(); //提交事务

@@ -12,9 +12,9 @@
 	<div class="input-group" style="width:250px;float:left;margin-left: 25px;">
 		<span class="input-group-addon">显示</span>
 		<select class="form-control" name="count">
-			<option value="10" @if( !empty($request['count']) && isset($request['count']) &&  $request['count']==10 ) selected @endif>10</option>
-			<option value="5" @if( !empty($request['count']) && isset($request['count']) &&  $request['count']==5 )selected @endif>5</option>
 			<option value="3" @if( !empty($request['count']) && isset($request['count']) &&  $request['count']==3 ) selected @endif>3</option>
+			<option value="5" @if( !empty($request['count']) && isset($request['count']) &&  $request['count']==5 )selected @endif>5</option>
+			<option value="10" @if( !empty($request['count']) && isset($request['count']) &&  $request['count']==10 ) selected @endif>10</option>
 		</select>
 		<span class="input-group-addon">条/页</span>
 	</div>
@@ -75,5 +75,4 @@
 								</div>
 								
 							
-
 @endsection

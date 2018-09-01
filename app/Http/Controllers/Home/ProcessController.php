@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use DB;
-
-class HomeController extends Controller
+use App\Http\Requests\Home\ProcessRequest;
+use App\Models\Process;
+class ProcessController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,12 +17,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //传输轮播图数据
-       $carousel = DB::table('carousel')->where('isshow', 1)->get();
-       //传输公告数据
-       $announcements = DB::table('announcements')->where('announcement_status',0)->first();
-       //查询热门帖子
-       return view('home.index.index',['carousel'=>$carousel,'announcements'=>$announcements]);
+        //加载界面
+        return view('home.process.index');
     }
 
     /**
@@ -41,9 +37,19 @@ class HomeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProcessRequest $request)
     {
-        //
+        //接收数据
+        $process = new Process;
+        $process -> phone = $request -> input('phone');
+        $process -> content = $request -> input('content');
+        //保存数据
+        $res = $process -> save();
+        if($res){
+            return redirect('/')->with('success','反馈成功');
+        }else{
+            return back()->with('error','反馈失败');
+        }
     }
 
     /**
@@ -89,11 +95,5 @@ class HomeController extends Controller
     public function destroy($id)
     {
         //
-    }
-    public function announcement(Request $request, $id)
-    {
-        $announcements = DB::table('announcements')->where('announcement_id',$id)->first();
-        // dd($announcements);
-        return view('home.announcement.index',['announcements'=>$announcements]);
     }
 }

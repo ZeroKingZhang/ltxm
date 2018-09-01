@@ -1,28 +1,30 @@
 <?php
 
-namespace App\Http\Controllers\Home;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Models\Process;
 use DB;
-
-class HomeController extends Controller
+class ProcessController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //传输轮播图数据
-       $carousel = DB::table('carousel')->where('isshow', 1)->get();
-       //传输公告数据
-       $announcements = DB::table('announcements')->where('announcement_status',0)->first();
-       //查询热门帖子
-       return view('home.index.index',['carousel'=>$carousel,'announcements'=>$announcements]);
+        //接收数据
+        $search = $request -> input('search',''); //搜索条件
+        $count = $request -> input('count',3); //搜索条数
+        // dump($search);
+        //获取数据
+        $data = Process::where('content','like','%'.$search.'%') ->orderBy('id') -> paginate($count);
+        //加载模板
+         return view('admin.process.index',['data'=>$data,'request'=>$request->all()]);
     }
 
     /**
@@ -54,7 +56,10 @@ class HomeController extends Controller
      */
     public function show($id)
     {
-        //
+        //获取数据
+        $process = Process::find($id);
+        //添加模板
+        return view('admin.process.show', ['data' => $process]);
     }
 
     /**
@@ -88,12 +93,18 @@ class HomeController extends Controller
      */
     public function destroy($id)
     {
-        //
-    }
-    public function announcement(Request $request, $id)
-    {
-        $announcements = DB::table('announcements')->where('announcement_id',$id)->first();
-        // dd($announcements);
-        return view('home.announcement.index',['announcements'=>$announcements]);
+        // dd('删除');
+        //开启事务
+        DB::beginTransaction();
+        //删除用户
+        $res = Process::destroy($id);
+        //返回结果
+        if ( $res ){
+            DB::commit();//提交事务
+            return back() -> with('success','处理成功');
+        }else{
+            DB::rollBack();
+            return back() -> with('error','处理失败');
+        }
     }
 }

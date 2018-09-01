@@ -150,12 +150,22 @@
 									<li><a href="/copyright" class="">版权声明</a></li>	
 								</ul>
 							</div>
-							<li>	
+						</li>
+					    <li>	
 							<a href="#subPages7" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>公告管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages7" class="collapse ">
 								<ul class="nav">
 									<li><a href="/admin/announcement/create" class="">公告添加</a></li>
 									<li><a href="/admin/announcement" class="">公告浏览</a></li>	
+								</ul>
+							</div>
+						</li>
+						<li>	
+							<a href="#subPages8" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>反馈管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="subPages8" class="collapse ">
+								<ul class="nav">
+									<li><a href="/admin/process" class="">反馈列表</a></li>
+									<li><a href="/admin/processdelete" class="">已处理反馈</a></li>	
 								</ul>
 							</div>
 						</li>
