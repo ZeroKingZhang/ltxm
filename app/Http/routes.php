@@ -23,8 +23,6 @@ Route::get('/logout','Home\LoginController@logout');
 Route::resource('/login','Home\LoginController');
 //问题与反馈
 Route::resource('/process','Home\ProcessController');
-//排行榜
-Route::resource('/charts','Home\ChartsController');
 //发帖
 Route::resource('/post','Home\PostController');
 

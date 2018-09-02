@@ -36,21 +36,30 @@
    
       <div class="hots"> 
    <dl class="hots-title"> 
-    <dt class="word" title=" 热门帖子"></dt> 
+    <dt class="word" title=" 最新帖子"></dt> 
     <dd> 
      <a href="" target="_blank" class="highlight"></a> 
     </dd> 
    </dl> 
    <ul id="hot"> 
+    @foreach($invitation as $k=>$v)
     <li class="hot-list">
      <div class="hot"> 
-      <div class="title"> 
-       <h3> <a href="http://shuyuan.taobao.com/?spm=a2e1t.8741129.a214tr8.17.5d25304ciYkkIB#!/knowledge/detail?id=Wz&amp;targetType=text" target="_blank" title="猜你喜欢全新升级，解码全新手淘首页流量玩法">猜你喜欢全新升级，解码全新手淘首页流量玩法</a></h3> 
-      </div> 
-      <p class="detail">随着手淘版块的不断变更，如何抓住推荐场景的流量对于商家来说将越来越重要。直钻推广猜你喜欢全新升级，为您带来全新手淘首页流量玩法</p> 
-      <p class="time">发表于 2018-06-1510:40</p> 
+      <a href="/note/{{$v->invitation_id}}">
+        <h3>
+          {{$v->ititle}}
+        </h3>
+      </a>
+      <a href="/user/{{$v->user->uid}}">
+        <p>发布人: {{$v->user->uname}}</p>
+      </a>
+      <a href="/list/{{$v->forum->forum_id}}">
+        <p>发表板块:{{$v->forum->forum_name}}</p>
+      </a>
+      <p >发表时间:{{$v->created_at}}</p> 
      </div> 
-     </li> 
+     </li>
+     @endforeach 
    </ul> 
   </div>
 </div>  

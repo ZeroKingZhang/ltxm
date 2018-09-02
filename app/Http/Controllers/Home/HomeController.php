@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
+use App\Models\Invitation;
 
 class HomeController extends Controller
 {
@@ -21,8 +22,9 @@ class HomeController extends Controller
        $carousel = DB::table('carousel')->where('isshow', 1)->get();
        //传输公告数据
        $announcements = DB::table('announcements')->where('announcement_status',0)->first();
-       //查询热门帖子
-       return view('home.index.index',['carousel'=>$carousel,'announcements'=>$announcements]);
+       //查询最新发布帖子
+       $invitation= Invitation::offset(0)->limit(3)->orderBy('created_at','desc')->get();
+       return view('home.index.index',['carousel'=>$carousel,'announcements'=>$announcements,'invitation'=>$invitation]);
     }
 
     /**

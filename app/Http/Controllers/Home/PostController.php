@@ -64,11 +64,18 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request,$id)
     {
-        $data=DB::table('forums')->where('forum_id',$id)->first();
-        $data2=DB::table('forums')->where('forum_id',$data->pid)->first();
-        return view('home.post.index',['data'=>$data,'data2'=>$data2]);
+        $homeFlag = $request->session()->get('homeFlag');
+        // dd($homeFlag);
+        if($homeFlag){
+            $data=DB::table('forums')->where('forum_id',$id)->first();
+            $data2=DB::table('forums')->where('forum_id',$data->pid)->first();
+            return view('home.post.index',['data'=>$data,'data2'=>$data2]);
+        }else{
+           return  redirect("/list/$id")->with('error','请先去登录');
+        }
+        
     }
 
     /**

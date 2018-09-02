@@ -71,8 +71,7 @@
                                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                     <ul class="nav navbar-nav">
                                         <li><a class="active" href="/">首页</a></li>
-                                        <li><a href="/forum">版块</a></li>
-                                        <li><a href="/charts">排行榜</a></li>                            
+                                        <li><a href="/forum">版块</a></li>                        
                                         <li><a href="/process">意见与反馈</ a></li>
                                     </ul>   
                                     <div class="clearfix"> </div>

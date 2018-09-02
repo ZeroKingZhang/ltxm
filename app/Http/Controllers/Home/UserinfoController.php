@@ -85,8 +85,12 @@ class UserinfoController extends Controller
      */
     public function edit(Request $request, $id)
     {
+        
         $user = User::where('uid','=',$id)->first();
         $homeUserInfo = $request->session()->get('homeUserInfo');
+        if($user->uname != $homeUserInfo){
+            return redirect("user/$id")->with('error','请不要更改他人的资料');
+        }
         return view('home.user.edit',['user'=>$user,'homeUserInfo'=>$homeUserInfo]);
     }
 
@@ -141,6 +145,10 @@ class UserinfoController extends Controller
     public function pic(Request $request, $id)
     {
         $user = User::where('uid','=',$id)->first();
+        $homeUserInfo = $request->session()->get('homeUserInfo');
+        if($user->uname != $homeUserInfo){
+            return redirect("user/$id")->with('error','请不要更改他人的资料');
+        }
         return view('home.user.pic',['user'=>$user]);
     }
     //文件上传方法
@@ -178,6 +186,10 @@ class UserinfoController extends Controller
     public function password(Request $request, $id)
     {
         $user = User::where('uid','=',$id)->first();
+        $homeUserInfo = $request->session()->get('homeUserInfo');
+        if($user->uname != $homeUserInfo){
+            return redirect("user/$id")->with('error','请不要更改他人的资料');
+        }
         return view('home.user.password',['user'=>$user]);
     }
 }    
