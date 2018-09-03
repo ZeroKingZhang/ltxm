@@ -28,7 +28,7 @@ class SoftdeletesController extends Controller
         $flights = Invitation::onlyTrashed()->find($id);
         $flights->forceDelete();
         
-            return redirect('/invitation/softdeletes')->with('success','删除成功');
+            return redirect('/softdelete')->with('success','删除成功');
                    
     }
     public function getRestore($id)
@@ -37,7 +37,7 @@ class SoftdeletesController extends Controller
             ->where('invitation_id', $id)
             ->restore();
        if($res){
-            return redirect('/invitation/softdeletes')->with('success','恢复成功');
+            return redirect('/softdelete')->with('success','恢复成功');
         }else{
 
            return back()->with('error','恢复失败'); 

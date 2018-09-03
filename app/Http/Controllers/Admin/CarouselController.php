@@ -92,7 +92,8 @@ class CarouselController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Carousel::find($id);
+        return view('admin.carousel.edit',['data'=>$data]);
     }
 
     /**
@@ -104,7 +105,16 @@ class CarouselController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $forum = Carousel::find($id);
+        $forum -> isshow = $request -> input('isshow');
+        $res = $forum -> save();
+         if($res){
+            DB::commit(); //提交事务
+           return redirect('/admin/carousel')->with('success','修改成功');
+         }else{
+            DB::rollBack();
+            return back()->with('error','修改失败');
+         }
     }
 
     /**

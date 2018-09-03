@@ -55,7 +55,7 @@ class ListController extends Controller
         //接收数据
         $count = $request -> input('count',10); //搜索条数
         //获取数据
-        $data = Invitation::where('forum_id',$id) ->orderBy('updated_at') -> paginate($count);
+        $data = Invitation::where('forum_id',$id) ->orderBy('updated_at','desc') -> paginate($count);
         // dd($data);
         
         // $data1 = DB::table('forums')->where('forum_id', $id)->get();

@@ -98,4 +98,11 @@ class HomeController extends Controller
         // dd($announcements);
         return view('home.announcement.index',['announcements'=>$announcements]);
     }
+
+    public function client($id)
+    {
+        $client = DB::table('client')->where('client_id',$id)->first();
+        // dd($announcements);
+        return view('home.client.index',['client'=>$client]);
+    }
 }

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title></title>
+	<title>义工旅行管理</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -48,12 +48,7 @@
 				<div class="navbar-btn">
 					<button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
 				</div>
-				<form class="navbar-form navbar-left">
-					<div class="input-group">
-						<input type="text" value="" class="form-control" placeholder="Search dashboard...">
-						<span class="input-group-btn"><button type="button" class="btn btn-primary">Go</button></span>
-					</div>
-				</form>
+				
 				<div id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown">
@@ -79,7 +74,7 @@
 								<ul class="nav">
 									<li><a href="/admin/user/create" class="">用户添加</a></li>
 									<li><a href="/admin/user" class="">用户列表</a></li>
-									<li><a href="/adminUser/index" class="">回收站</a></li>								
+									<li><a href="/admin/userdelete/index" class="">回收站</a></li>								
 								</ul>
 							</div>
 						</li>
@@ -108,7 +103,7 @@
 								<ul class="nav">
 									<li><a href="/admin/forum/create" class="">版块添加</a></li>
 									<li><a href="/admin/forum" class="">版块显示</a></li>
-									<li><a href="/forumdelete" class="">回收站</a></li>
+									<!-- <li><a href="/forumdelete" class="">回收站</a></li> -->
 								</ul>
 							</div>
 						</li>
@@ -166,6 +161,15 @@
 								<ul class="nav">
 									<li><a href="/admin/process" class="">反馈列表</a></li>
 									<li><a href="/admin/processdelete" class="">已处理反馈</a></li>	
+								</ul>
+							</div>
+						</li>
+						<li>	
+							<a href="#subPages9" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>链接管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+							<div id="subPages9" class="collapse ">
+								<ul class="nav">
+									<li><a href="/admin/client" class="">链接列表</a></li>
+									<li><a href="/admin/client/create" class="">添加链接</a></li>	
 								</ul>
 							</div>
 						</li>

@@ -6,12 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\User;
-use App\Models\Home_User_detail;
+use App\Models\Client;
 use DB;
-use Hash;
-
-class HomeUserController extends Controller
+use App\Http\Requests\Admin\ClientRequest;
+class ClientController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,10 +23,9 @@ class HomeUserController extends Controller
         $count = $request -> input('count',3); //搜索条数
         // dump($search);
         //获取数据
-        $data = User::where('uname','like','%'.$search.'%') ->orderBy('uid') -> paginate($count);
-        // dd($data);
+        $data = Client::where('ctitle','like','%'.$search.'%') ->orderBy('client_id') -> paginate($count);
         //加载模板
-         return view('admin.home.index',['data'=>$data,'request'=>$request->all()]);
+         return view('admin.client.index',['data'=>$data,'request'=>$request->all()]);
     }
 
     /**
@@ -38,7 +35,8 @@ class HomeUserController extends Controller
      */
     public function create()
     {
-        //
+        //加载模板
+        return view('admin.client.create');
     }
 
     /**
@@ -47,9 +45,23 @@ class HomeUserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ClientRequest $request)
     {
-        //
+        //开启事务
+        DB::beginTransaction();
+        //插入到数据库
+        $client = new Client;
+        $client -> ctitle = $request -> input('ctitle');
+        $client -> cinfo =  $request -> input('cinfo');
+        $res = $client -> save();
+        //返回结果
+        if ( $res ){
+            DB::commit();//提交事务
+            return redirect('/admin/client') -> with('success','添加成功');
+        }else{
+            DB::rollBack();
+            return back() -> with('error','添加失败');
+        }
     }
 
     /**
@@ -60,7 +72,10 @@ class HomeUserController extends Controller
      */
     public function show($id)
     {
-        //
+        //获取数据
+        $client = Client::find($id);
+        //添加模板
+        return view('admin.client.show', ['data' => $client]);
     }
 
     /**
@@ -72,9 +87,9 @@ class HomeUserController extends Controller
     public function edit($id)
     {
         //获取数据
-        $data = User::find($id);
+        $client = Client::find($id);
         //添加模板
-        return view('admin.home.edit', ['data' => $data]);
+        return view('admin.client.edit', ['data' => $client]);
     }
 
     /**
@@ -84,16 +99,23 @@ class HomeUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        $user = User::find($id);
-        $user ->upwd =Hash::make($request -> input('upwd'));
-        $res = $user ->save();
-        if($res){
-             return redirect('/admin/home/user') -> with('success','修改成功');
-         }else{
+    public function update(ClientRequest $request, $id)
+    {       
+         //开启事务
+        DB::beginTransaction();
+        //插入到数据库
+        $client = Client::find($id);
+        $client -> ctitle = $request -> input('ctitle');
+        $client -> cinfo =  $request -> input('cinfo');
+        $res = $client -> save();
+        //返回结果
+        if ( $res ){
+            DB::commit();//提交事务
+            return redirect('/admin/client') -> with('success','修改成功');
+        }else{
+            DB::rollBack();
             return back() -> with('error','修改失败');
-         }
+        }
     }
 
     /**
@@ -104,12 +126,12 @@ class HomeUserController extends Controller
      */
     public function destroy($id)
     {
-         //开启事务
+        //开启事务
         DB::beginTransaction();
         //删除用户
-        $res1 = User::destroy($id);
+        $res = Client::destroy($id);
         //返回结果
-        if ( $res1 ){
+        if ( $res ){
             DB::commit();//提交事务
             return back() -> with('success','删除成功');
         }else{

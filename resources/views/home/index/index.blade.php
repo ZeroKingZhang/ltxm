@@ -50,7 +50,7 @@
           {{$v->ititle}}
         </h3>
       </a>
-      <a href="/user/{{$v->user->uid}}">
+      <a href="/user/{{$v->uid}}">
         <p>发布人: {{$v->user->uname}}</p>
       </a>
       <a href="/list/{{$v->forum->forum_id}}">
@@ -67,13 +67,19 @@
    <div class="hot-post focus"> 
     <h4 class="post-title">公告：<a href="/announcement/{{$announcements->announcement_id}}" target="_blank">{{$announcements->announcement_title}}</a> </h4> 
     <div class="info"> 
-     <dl class="reply-list"> 
-      <dt>
-       销量太少？
-      </dt> 
-      <dd>
-       告诉你如何销量突破 
-     </dl> 
+     <dl class="reply-list">  
+      @foreach($client as $k=>$v)
+    <dl class="reply-list"> 
+      <a href="/client/{{$v->client_id}}">
+        <dt>
+          {{$v->ctitle}}
+        </dt>
+      </a>
+      <a href="/client/{{$v->client_id}}">
+        <dd>{{$v->cinfo}}</dd>
+      </a>
+    </dl>
+    @endforeach
     </div> 
    </div> 
    <div class="right-box ju"> 

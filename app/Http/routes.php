@@ -13,6 +13,8 @@
 
 //公告详情
 Route::get('/announcement/{id}','Home\HomeController@announcement');
+//链接详情
+Route::get('/client/{id}','Home\HomeController@client');
 //前台首页
 Route::resource('/','Home\HomeController');
 //前台注册
@@ -42,11 +44,6 @@ Route::get('/user/password/{id}','Home\UserinfoController@password');//用户密
 Route::post('/user/upload','Home\UserinfoController@upload');//用户图片上传
 Route::resource('/user','Home\UserinfoController');
 
-//--------前台路由组
-Route::group(['middleware'=>'homelogin'],function(){
-	//前台个人信息
-	
-});
 
 
 
@@ -74,8 +71,7 @@ Route::get('/admin','Admin\AdminController@index');
 //后台用户管理
 Route::resource('/admin/user','Admin\UserController'); 
 //后台用户软删除管理
-Route::resource('/admin/user','Admin\UserController');
-Route::resource('/admin/user','Admin\UserController');
+Route::controller('/admin/userdelete','Admin\DeleteController');
 //后台管理前台用户
 Route::resource('/admin/home/user','Admin\HomeUserController');
 //帖子管理
@@ -88,7 +84,7 @@ Route::resource('/admin/process','Admin\ProcessController');
 Route::resource('/admin/processdelete','Admin\ProcessDeleteController');
 //版块软删除管理
 Route::controller('/forumdelete','Admin\ForumdeleteController');
-Route::controller('/softdelete','Admin\softdeletesController');
+Route::controller('/softdelete','Admin\SoftdeletesController');
 Route::resource('/admin/invitation','Admin\InvitationController');
 Route::resource('/admin/forum','Admin\ForumController');
 Route::resource('/admin/forum/show1','Admin\ForumController@show1');
@@ -109,4 +105,6 @@ Route::resource('/admin/announcement','Admin\announcementController');
 //公告管理
 Route::get('/admin/announcement/disabled/{id}','Admin\AnnouncementController@disabled');
 Route::get('/admin/announcement/start/{id}','Admin\AnnouncementController@start');
+//链接管理
+Route::resource('/admin/client','Admin\ClientController');
 });

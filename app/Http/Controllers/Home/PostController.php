@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Forum;
 use App\Models\Invitation;
 use DB;
+use App\User;
 
 class PostController extends Controller
 {
@@ -46,7 +47,9 @@ class PostController extends Controller
          $invitation -> ititle = $request -> input('title');
          $invitation -> content  = $request -> input('content');
          $invitation -> forum_id  = $request -> input('forum_id');
-         $invitation -> uid     = 1;
+         $homeUserInfo = $request->session()->get('homeUserInfo');
+         $user = User::where('uname','=',$homeUserInfo)->first();
+         $invitation -> uid =  $user->uid;
          $forumid = $request -> input('forum_id');
          $res = $invitation -> save();
          if($res){

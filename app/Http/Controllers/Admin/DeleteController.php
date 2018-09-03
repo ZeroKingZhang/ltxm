@@ -38,7 +38,7 @@ class DeleteController extends Controller
          //返回结果
         
              // DB::commit();//提交事务
-            return redirect('/adminUser/index') -> with('success','删除成功');
+            return redirect('/admin/userdelete/index') -> with('success','删除成功');
         // }else{
         //     DB::rollBack();
         //     return back() -> with('error','删除失败');
@@ -57,7 +57,7 @@ class DeleteController extends Controller
         //返回结果
         if ( $res ){
             DB::commit();//提交事务
-            return redirect('/adminUser/index') -> with('success','恢复成功');
+            return redirect('/admin/userdelete/index') -> with('success','恢复成功');
         }else{
             DB::rollBack();
             return back() -> with('error','恢复失败');

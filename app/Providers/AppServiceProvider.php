@@ -30,6 +30,10 @@ class AppServiceProvider extends ServiceProvider
             $blogroll=\DB::table('blogrolls')->get();
             $view->with('blogroll',$blogroll);
         });
+        view()->composer('home.index.index', function ($view) {
+            $client=\DB::table('client')->get();
+            $view->with('client',$client);
+        });
     }
 
     /**
