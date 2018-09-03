@@ -51,7 +51,7 @@ class LoginController extends Controller
             // session('back',null);
             return redirect('/')->with('success','登录成功');
         }else{
-            return back()->with('error','登录失败');
+            return back()->with('error','登录失败用户名或密码错误');
         }
     }
 

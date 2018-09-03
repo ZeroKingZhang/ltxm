@@ -51,12 +51,12 @@
         </h3>
       </a>
       <a href="/user/{{$v->uid}}">
-        <p>发布人: {{$v->user->uname}}</p>
+        <h3>发布人: {{$v->user->uname}}</h3>
       </a>
       <a href="/list/{{$v->forum->forum_id}}">
-        <p>发表板块:{{$v->forum->forum_name}}</p>
+        <h5>发表板块:{{$v->forum->forum_name}}</h5>
       </a>
-      <p >发表时间:{{$v->created_at}}</p> 
+      <h5>发表时间:{{$v->created_at}}</h5> 
      </div> 
      </li>
      @endforeach 
@@ -83,7 +83,7 @@
     </div> 
    </div> 
    <div class="right-box ju"> 
-    <h2 class="icon-title">右侧标题</h2> 
+    <h2 class="icon-title"></h2> 
     <ul class="post-list"> 
      
     </ul> 

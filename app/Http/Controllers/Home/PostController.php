@@ -41,24 +41,31 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-         DB::beginTransaction(); //开启事务
-         //插入数据库
-         $invitation = new Invitation;
-         $invitation -> ititle = $request -> input('title');
-         $invitation -> content  = $request -> input('content');
-         $invitation -> forum_id  = $request -> input('forum_id');
-         $homeUserInfo = $request->session()->get('homeUserInfo');
-         $user = User::where('uname','=',$homeUserInfo)->first();
-         $invitation -> uid =  $user->uid;
-         $forumid = $request -> input('forum_id');
-         $res = $invitation -> save();
-         if($res){
-            DB::commit(); //提交事务
-           return redirect("/list/$forumid")->with('success','添加成功');
+        $homeFlag = $request->session()->get('homeFlag');
+        $forumid = $request -> input('forum_id');
+        // dd($forumid);
+        if($homeFlag){
+             DB::beginTransaction(); //开启事务
+             //插入数据库
+             $invitation = new Invitation;
+             $invitation -> ititle = $request -> input('title');
+             $invitation -> content  = $request -> input('content');
+             $invitation -> forum_id  = $request -> input('forum_id');
+             $homeUserInfo = $request->session()->get('homeUserInfo');
+             $user = User::where('uname','=',$homeUserInfo)->first();
+             $invitation -> uid =  $user->uid;
+             $forumid = $request -> input('forum_id');
+             $res = $invitation -> save();
+             if($res){
+                DB::commit(); //提交事务
+               return redirect("/list/$forumid")->with('success','添加成功');
+             }else{
+                DB::rollBack();
+                return back()->with('error','添加失败');
+             }
          }else{
-            DB::rollBack();
-            return back()->with('error','添加失败');
-         }
+           return  redirect("/list/$forumid")->with('error','请先去登录');
+        }
     }
 
     /**

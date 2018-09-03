@@ -14,6 +14,27 @@
   <script type="text/javascript" src="js/modernizr.custom.86080.js"></script>
 </head>
 <body>
+	<script src="/js/jquery.js"></script>
+<script src="/layer/src/layer.js"></script>
+          
+
+       @if( session('success') )
+        <script>
+        layer.alert("{{ Session('success') }}", {
+          skin: 'layui-layer-lan' 
+          ,closeBtn: 0
+        });
+        </script>
+        @endif
+        
+        @if( session('error') )
+        <script>
+        layer.alert("{{ Session('error') }}", {
+          skin: 'layui-layer-molv' 
+          ,closeBtn: 0
+        });
+        </script>
+        @endif
 
 			<div id="particles-js"></div>
 		
@@ -43,10 +64,10 @@
 						@endif	
                	    	<div class="row form-section">
 							<div class="form-group col-md-7 col-sm-7 col-xs-7"">
-						    <input type="text" class="form-control" name="uname" placeholder="请输入注册账号" value="{{ old('uname') }}"><span></span>
+						    <input type="text" class="form-control" name="uname" placeholder="请输入注册账号  格式：以字母开头6-18位" value="{{ old('uname') }}"><span></span>
 						</div>
 						<div class="form-group col-md-7 col-sm-7 col-xs-7"">
-						    <input type="password" class="form-control" name="upwd" placeholder="请输入密码" ><span></span>
+						    <input type="password" class="form-control" name="upwd" placeholder="请输入密码 格式：6-18位字母数字下划线" ><span></span>
 						</div>
 						<div class="form-group col-md-7 col-sm-7 col-xs-7"">
 						    <input type="password" class="form-control" name="reupwd" placeholder="确认密码"><span></span>

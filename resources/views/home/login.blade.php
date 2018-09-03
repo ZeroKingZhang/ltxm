@@ -14,7 +14,27 @@
   <script type="text/javascript" src="js/modernizr.custom.86080.js"></script>	
 </head>
 <body>
+	<script src="/js/jquery.js"></script>
+<script src="/layer/src/layer.js"></script>
+          
 
+       @if( session('success') )
+        <script>
+        layer.alert("{{ Session('success') }}", {
+          skin: 'layui-layer-lan' 
+          ,closeBtn: 0
+        });
+        </script>
+        @endif
+        
+        @if( session('error') )
+        <script>
+        layer.alert("{{ Session('error') }}", {
+          skin: 'layui-layer-molv' 
+          ,closeBtn: 0
+        });
+        </script>
+        @endif
 			<div id="particles-js"></div>
 		
 			<ul class="cb-slideshow">

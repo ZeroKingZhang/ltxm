@@ -50,7 +50,7 @@ class RegisterController extends Controller
         $res1 =  $user -> save();
         if($res1){
             DB::commit(); //提交事务
-            return redirect('/login')->with('success','注册成功');
+            return redirect('/login')->with('success','注册成功，登录开始交流吧');
         }else{
             DB::rollBcak(); //回滚事务
             return redirect('/register')->with('error','注册失败');
